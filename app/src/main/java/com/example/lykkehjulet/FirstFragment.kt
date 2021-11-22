@@ -46,14 +46,16 @@ class FirstFragment : Fragment() {
         }
 
         binding.buttonSecond.setOnClickListener {
-            val word : String
-            word = binding.textField.text.toString()
+            val word : String = binding.textField.text.toString()
 
-            println(word)
+
         }
 
 
+
     }
+
+
 
 
 
