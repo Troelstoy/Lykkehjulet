@@ -33,7 +33,6 @@ class FirstFragment : Fragment() {
 
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -61,8 +60,19 @@ class FirstFragment : Fragment() {
             viewModel.wrongGuess()
         }
 
+        // Observe the scrambledCharArray LiveData, passing in the LifecycleOwner and the observer.
+        //TODO : This might work
+        viewModel.currentWordView.observe(viewLifecycleOwner,
+            { newWord ->
+                binding.currentword.text = newWord
+            })
 
-
+        /*
+        viewModel.score.observe(viewLifecycleOwner,
+            { newScore ->
+                binding.score.text = getString(R.string.score, newScore)
+            })
+         */
     }
 
     /*
@@ -90,18 +100,6 @@ class FirstFragment : Fragment() {
         viewModel.reinitializeData()
         //setErrorTextField(false)
     }
-
-    /*
-    private fun setErrorTextField(error: Boolean) {
-        if (error) {
-            binding.textField.isErrorEnabled = true
-            binding.textField.error = getString(R.string.try_again)
-        } else {
-            binding.textField.isErrorEnabled = false
-            binding.textInputEditText.text = null
-        }
-    }
-     */
 
     private fun exitGame() {
         activity?.finish()

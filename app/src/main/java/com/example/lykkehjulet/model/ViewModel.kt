@@ -9,7 +9,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.example.lykkehjulet.MAX_NO_OF_WORDS
+import com.example.lykkehjulet.R
 import com.example.lykkehjulet.allWordsList
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 //TODO: Får en fejl der siger no adapter attached; skipping layout
 
@@ -28,21 +30,8 @@ class ViewModel : ViewModel() {
     private lateinit var currentWord: String
 
     private val _currentWordView = MutableLiveData<String>()
-    val currentWordView : LiveData<Spannable> = Transformations.map(_currentWordView){
-        if (it == null) {
-            SpannableString("")
-        } else {
-            val scrambledWord = it.toString()
-            val spannable: Spannable = SpannableString(scrambledWord)
-            spannable.setSpan(
-                TtsSpan.VerbatimBuilder(scrambledWord).build(),
-                0,
-                scrambledWord.length,
-                Spannable.SPAN_INCLUSIVE_INCLUSIVE
-            )
-            spannable
-        }
-    }
+    val currentWordView : LiveData<String>
+        get() = _currentWordView
 
 
     private fun getNextWord() {
@@ -89,6 +78,11 @@ class ViewModel : ViewModel() {
         println(currentWord)
 
     }
+
+    private fun increaseScore(amount : Int) {
+        _score.value = (_score.value)?.plus(amount)
+    }
+
 
 }
 

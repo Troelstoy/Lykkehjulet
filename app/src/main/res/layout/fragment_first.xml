@@ -21,7 +21,7 @@
 
 
     <TextView
-        android:id="@+id/textview_first"
+        android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -67,7 +67,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textview_first"
+            app:layout_constraintTop_toBottomOf="@+id/score"
             tools:text="Gæt Ord" />
 
     <com.google.android.material.textfield.TextInputEditText
@@ -83,6 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/currentword" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>
