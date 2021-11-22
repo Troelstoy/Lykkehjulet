@@ -12,6 +12,7 @@ import com.example.lykkehjulet.databinding.FragmentFirstBinding
 import com.example.lykkehjulet.model.ViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
+//TODO: Løs at når man skriver forsvinder knapperne
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -42,13 +43,18 @@ class FirstFragment : Fragment() {
 
 
         binding.buttonFirst.setOnClickListener {
+            val word : String = binding.textField.text.toString()
+
+            if(viewModel.isUserWordCorrect(word)){
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            }
+
         }
 
         binding.buttonSecond.setOnClickListener {
             val word : String = binding.textField.text.toString()
 
-
+            println(viewModel.printword())
         }
 
 

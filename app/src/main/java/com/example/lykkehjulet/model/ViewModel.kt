@@ -14,18 +14,18 @@ class ViewModel : ViewModel() {
         get() = _score
 
     private var wordsList: MutableList<String> = mutableListOf()
+
     private lateinit var currentWord: String
+
 
     private fun getNextWord() {
         currentWord = allWordsList.random()
     }
 
-    val tempWord = currentWord.toCharArray()
-
 
     init {
-        Log.d("Fragment", "ViewModel created!")
         getNextWord()
+        println(currentWord)
     }
 
     fun reinitializeData() {
@@ -42,5 +42,12 @@ class ViewModel : ViewModel() {
         return false
     }
 
-
+    //TODO: Skal slettes
+    fun printword(){
+        println(currentWord)
+        
+    }
 }
+
+
+
