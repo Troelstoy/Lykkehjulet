@@ -15,6 +15,10 @@ import com.example.lykkehjulet.allWordsList
 
 class ViewModel : ViewModel() {
 
+    //TODO: Skal vises på fragment skærmen
+    //TODO: Skal have den rigtige logik
+    private var lives : Int = 5
+
     private val _score = MutableLiveData(0)
     val score: LiveData<Int>
         get() = _score
@@ -43,6 +47,14 @@ class ViewModel : ViewModel() {
 
     private fun getNextWord() {
         currentWord = allWordsList.random()
+    }
+
+    fun getlives() : Int{
+        return lives
+    }
+
+    fun wrongGuess(){
+        lives = lives - 1
     }
 
 

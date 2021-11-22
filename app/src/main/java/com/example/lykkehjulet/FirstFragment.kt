@@ -58,7 +58,9 @@ class FirstFragment : Fragment() {
                 println(viewModel.isUserLetterCorrect(letter))
             }
 
-                println(viewModel.printword())
+            println(viewModel.printword())
+            println(viewModel.getlives())
+            viewModel.wrongGuess()
         }
 
 

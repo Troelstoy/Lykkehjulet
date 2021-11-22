@@ -25,4 +25,9 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/highScores"
+        android:name="com.example.lykkehjulet.HighScoresFragment"
+        android:label="fragment_high_scores"
+        tools:layout="@layout/fragment_high_scores" />
 </navigation>
