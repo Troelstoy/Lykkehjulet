@@ -39,8 +39,6 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
         binding.buttonFirst.setOnClickListener {
             val word : String = binding.textField.text.toString()
 
@@ -66,10 +64,6 @@ class FirstFragment : Fragment() {
 
 
     }
-
-
-
-
 
     /*
     private fun showFinalScoreDialog() {
@@ -109,5 +103,8 @@ class FirstFragment : Fragment() {
     }
      */
 
+    private fun exitGame() {
+        activity?.finish()
+    }
 
 }

@@ -75,8 +75,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="184dp"
-        android:hint="Dit gæt "
-        android:maxLines="1"
+        android:hint="Indtast dit gæt"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -84,6 +83,6 @@
         app:layout_constraintTop_toBottomOf="@+id/currentword" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>
