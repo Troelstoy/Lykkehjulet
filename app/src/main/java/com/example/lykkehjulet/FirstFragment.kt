@@ -47,9 +47,8 @@ class FirstFragment : Fragment() {
 
         binding.buttonSecond.setOnClickListener {
             val word : String
-            word = binding.textField.text.toString()
 
-            println(word)
+            word = binding.textInputEditText.text.toString()
         }
 
 
