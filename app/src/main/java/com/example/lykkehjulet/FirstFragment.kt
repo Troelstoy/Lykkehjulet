@@ -12,8 +12,7 @@ import com.example.lykkehjulet.databinding.FragmentFirstBinding
 import com.example.lykkehjulet.model.ViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-//TODO: Løs at når man skriver forsvinder knapperne
-
+//TODO: Kan ikke vise det nuværende ord ordentligt...
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
@@ -53,8 +52,13 @@ class FirstFragment : Fragment() {
 
         binding.buttonSecond.setOnClickListener {
             val word : String = binding.textField.text.toString()
+            if(word.length != 0 && word.length == 1){
 
-            println(viewModel.printword())
+            val letter : Char = word[0]
+                println(viewModel.isUserLetterCorrect(letter))
+            }
+
+                println(viewModel.printword())
         }
 
 
