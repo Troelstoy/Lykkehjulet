@@ -11,6 +11,8 @@ import com.example.lykkehjulet.databinding.FragmentSecondBinding
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
+
+//TODO: Skal bruge recyclerview til at vise highscores
 class SecondFragment : Fragment() {
 
     private var _binding: FragmentSecondBinding? = null
