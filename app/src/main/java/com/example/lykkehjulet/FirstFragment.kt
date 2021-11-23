@@ -55,7 +55,7 @@ class FirstFragment : Fragment() {
             }
 
             println(viewModel.printword())
-            println(viewModel.score.value)
+            println(viewModel.score)
             viewModel.wrongGuess()
             viewModel.increaseScore(10)
         }
