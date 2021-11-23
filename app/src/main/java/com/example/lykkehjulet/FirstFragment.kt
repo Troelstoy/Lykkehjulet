@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -52,10 +53,30 @@ class FirstFragment : Fragment() {
             }
 
             println(viewModel.printword())
-            println("dit ord er " + viewModel.currentWordView.value)
-            viewModel.wrongGuess()
+            println(viewModel.getlives().value)
+            viewModel.wrongGuess(1)
             viewModel.increaseScore(10)
         }
+
+
+        /**
+         * Dummy måde at indsætte et tal på
+         */
+        //Todo: Skal opdatere view
+
+        /*
+        val textView : TextView = view.findViewById(R.id.lives)
+        textView.text = viewModel.lives.toString
+
+         */
+
+        //TODO: Virker måske
+        binding.lives.text = viewModel.lives.value.toString()
+
+
+
+
+
     }
 
     /*

@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.lykkehjulet.databinding.FragmentSecondBinding
+import com.example.lykkehjulet.model.ViewModel
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -14,6 +16,8 @@ import com.example.lykkehjulet.databinding.FragmentSecondBinding
 
 //TODO: Skal bruge recyclerview til at vise highscores
 class SecondFragment : Fragment() {
+
+    private val viewModel: ViewModel by viewModels()
 
     private var _binding: FragmentSecondBinding? = null
 
