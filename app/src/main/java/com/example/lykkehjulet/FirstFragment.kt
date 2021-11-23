@@ -55,7 +55,7 @@ class FirstFragment : Fragment() {
             }
 
             println(viewModel.printword())
-            println(viewModel.score)
+            println("dit ord er " + viewModel.currentWordView.value)
             viewModel.wrongGuess()
             viewModel.increaseScore(10)
         }

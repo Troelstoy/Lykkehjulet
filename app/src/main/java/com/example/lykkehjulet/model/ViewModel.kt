@@ -3,15 +3,11 @@ package com.example.lykkehjulet.model
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.TtsSpan
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import com.example.lykkehjulet.MAX_NO_OF_WORDS
-import com.example.lykkehjulet.R
 import com.example.lykkehjulet.allWordsList
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 //TODO: Får en fejl der siger no adapter attached; skipping layout
 
@@ -29,11 +25,31 @@ class ViewModel : ViewModel() {
 
     private var wordsList: MutableList<String> = mutableListOf()
 
-    private lateinit var currentWord: String
 
+    //TODO: Bliver ikke sat til nogen værdi
     private val _currentWordView = MutableLiveData<String>()
-    val currentWordView : LiveData<String>
-        get() = _currentWordView
+    val currentWordView : LiveData<Spannable> = Transformations.map(_currentWordView) {
+        if (it == null) {
+            SpannableString("")
+        } else {
+            val currentWordView = it.toString()
+            val spannable: Spannable = SpannableString(currentWordView)
+            spannable.setSpan(
+                TtsSpan.VerbatimBuilder(currentWordView).build(),
+                0,
+                currentWordView.length,
+                Spannable.SPAN_INCLUSIVE_INCLUSIVE
+            )
+            spannable
+        }
+    }
+
+    init {
+        getNextWord()
+        println(currentWord)
+    }
+
+    private lateinit var currentWord: String
 
 
     private fun getNextWord() {
@@ -46,12 +62,6 @@ class ViewModel : ViewModel() {
 
     fun wrongGuess(){
         _lives -= 1
-    }
-
-
-    init {
-        getNextWord()
-        println(currentWord)
     }
 
     fun reinitializeData() {
