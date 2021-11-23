@@ -19,11 +19,8 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
  */
 class FirstFragment : Fragment() {
 
-    private val viewModel: ViewModel by viewModels()
-
     private lateinit var binding: FragmentFirstBinding
-
-
+    private val viewModel: ViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -59,16 +56,6 @@ class FirstFragment : Fragment() {
             viewModel.wrongGuess()
             viewModel.increaseScore(10)
         }
-
-        // Observe the scrambledCharArray LiveData, passing in the LifecycleOwner and the observer.
-        //TODO : This might work
-
-
-        viewModel.score.observe(viewLifecycleOwner,
-            { newScore ->
-                binding.score.text = getString(R.string.score, newScore)
-            })
-
     }
 
     /*
