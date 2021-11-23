@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.lykkehjulet.databinding.FragmentFirstBinding
@@ -20,18 +21,16 @@ class FirstFragment : Fragment() {
 
     private val viewModel: ViewModel by viewModels()
 
-    private var _binding: FragmentFirstBinding? = null
+    private lateinit var binding: FragmentFirstBinding
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_first, container, false)
         return binding.root
     }
 
@@ -56,23 +55,20 @@ class FirstFragment : Fragment() {
             }
 
             println(viewModel.printword())
-            println(viewModel.getlives())
+            println(viewModel.score.value)
             viewModel.wrongGuess()
+            viewModel.increaseScore(10)
         }
 
         // Observe the scrambledCharArray LiveData, passing in the LifecycleOwner and the observer.
         //TODO : This might work
-        viewModel.currentWordView.observe(viewLifecycleOwner,
-            { newWord ->
-                binding.currentword.text = newWord
-            })
 
-        /*
+
         viewModel.score.observe(viewLifecycleOwner,
             { newScore ->
                 binding.score.text = getString(R.string.score, newScore)
             })
-         */
+
     }
 
     /*
@@ -91,10 +87,6 @@ class FirstFragment : Fragment() {
     }
      */
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 
     private fun restartGame() {
         viewModel.reinitializeData()

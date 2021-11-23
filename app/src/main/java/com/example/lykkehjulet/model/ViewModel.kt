@@ -19,7 +19,9 @@ class ViewModel : ViewModel() {
 
     //TODO: Skal vises på fragment skærmen
     //TODO: Skal have den rigtige logik
-    private var lives : Int = 5
+    private var _lives : Int = 5
+    val lives: Int
+        get() =_lives
 
     private val _score = MutableLiveData(0)
     val score: LiveData<Int>
@@ -43,7 +45,7 @@ class ViewModel : ViewModel() {
     }
 
     fun wrongGuess(){
-        lives = lives - 1
+        _lives -= 1
     }
 
 
@@ -79,7 +81,7 @@ class ViewModel : ViewModel() {
 
     }
 
-    private fun increaseScore(amount : Int) {
+    fun increaseScore(amount : Int) {
         _score.value = (_score.value)?.plus(amount)
     }
 
