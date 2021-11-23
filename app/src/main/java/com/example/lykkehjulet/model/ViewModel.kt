@@ -3,12 +3,10 @@ package com.example.lykkehjulet.model
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.TtsSpan
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import com.example.lykkehjulet.MAX_NO_OF_WORDS
 import com.example.lykkehjulet.allWordsList
 
 //TODO: Får en fejl der siger no adapter attached; skipping layout
@@ -17,7 +15,9 @@ class ViewModel : ViewModel() {
 
     //TODO: Skal vises på fragment skærmen
     //TODO: Skal have den rigtige logik
-    private var lives : Int = 5
+    private var _lives : Int = 5
+    val lives: Int
+        get() =_lives
 
     private val _score = MutableLiveData(0)
     val score: LiveData<Int>
@@ -25,24 +25,31 @@ class ViewModel : ViewModel() {
 
     private var wordsList: MutableList<String> = mutableListOf()
 
-    private lateinit var currentWord: String
 
+    //TODO: Bliver ikke sat til nogen værdi
     private val _currentWordView = MutableLiveData<String>()
-    val currentWordView : LiveData<Spannable> = Transformations.map(_currentWordView){
+    val currentWordView : LiveData<Spannable> = Transformations.map(_currentWordView) {
         if (it == null) {
             SpannableString("")
         } else {
-            val scrambledWord = it.toString()
-            val spannable: Spannable = SpannableString(scrambledWord)
+            val currentWordView = it.toString()
+            val spannable: Spannable = SpannableString(currentWordView)
             spannable.setSpan(
-                TtsSpan.VerbatimBuilder(scrambledWord).build(),
+                TtsSpan.VerbatimBuilder(currentWordView).build(),
                 0,
-                scrambledWord.length,
+                currentWordView.length,
                 Spannable.SPAN_INCLUSIVE_INCLUSIVE
             )
             spannable
         }
     }
+
+    init {
+        getNextWord()
+        println(currentWord)
+    }
+
+    private lateinit var currentWord: String
 
 
     private fun getNextWord() {
@@ -54,13 +61,7 @@ class ViewModel : ViewModel() {
     }
 
     fun wrongGuess(){
-        lives = lives - 1
-    }
-
-
-    init {
-        getNextWord()
-        println(currentWord)
+        _lives -= 1
     }
 
     fun reinitializeData() {
@@ -89,6 +90,11 @@ class ViewModel : ViewModel() {
         println(currentWord)
 
     }
+
+    fun increaseScore(amount : Int) {
+        _score.value = (_score.value)?.plus(amount)
+    }
+
 
 }
 

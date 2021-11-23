@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.lykkehjulet.databinding.FragmentFirstBinding
@@ -18,28 +19,20 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
  */
 class FirstFragment : Fragment() {
 
+    private lateinit var binding: FragmentFirstBinding
     private val viewModel: ViewModel by viewModels()
-
-    private var _binding: FragmentFirstBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_first, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
 
         binding.buttonFirst.setOnClickListener {
             val word : String = binding.textField.text.toString()
@@ -59,17 +52,11 @@ class FirstFragment : Fragment() {
             }
 
             println(viewModel.printword())
-            println(viewModel.getlives())
+            println("dit ord er " + viewModel.currentWordView.value)
             viewModel.wrongGuess()
+            viewModel.increaseScore(10)
         }
-
-
-
     }
-
-
-
-
 
     /*
     private fun showFinalScoreDialog() {
@@ -87,27 +74,14 @@ class FirstFragment : Fragment() {
     }
      */
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 
     private fun restartGame() {
         viewModel.reinitializeData()
         //setErrorTextField(false)
     }
 
-    /*
-    private fun setErrorTextField(error: Boolean) {
-        if (error) {
-            binding.textField.isErrorEnabled = true
-            binding.textField.error = getString(R.string.try_again)
-        } else {
-            binding.textField.isErrorEnabled = false
-            binding.textInputEditText.text = null
-        }
+    private fun exitGame() {
+        activity?.finish()
     }
-     */
-
 
 }
