@@ -36,7 +36,6 @@ class ViewModel : ViewModel() {
 
     private lateinit var guessWord :String
 
-
     private fun getNextWord() {
         currentWord = allWordsList.random()
     }
@@ -44,7 +43,7 @@ class ViewModel : ViewModel() {
     fun initGuessWord(): String {
         val builder = StringBuilder()
         for (i in 0..currentWord.length){
-            builder.append("- ")
+            builder.append("-")
         }
 
         guessWord = builder.toString()
@@ -69,6 +68,11 @@ class ViewModel : ViewModel() {
 
     fun isUserLetterCorrect(playerLetter : Char) :Boolean{
         if(currentWord.contains(playerLetter)){
+            for (i in currentWord.indices){
+                if (currentWord[i] == playerLetter){
+                    guessWord[i] == playerLetter
+                }
+            }
             return true
         }
         return false
@@ -76,6 +80,7 @@ class ViewModel : ViewModel() {
 
     fun increaseScore(amount : Int) {
         _score.value = (_score.value)?.plus(amount)
+        println(currentWord)
     }
 
     fun wrongGuess(amount: Int){
