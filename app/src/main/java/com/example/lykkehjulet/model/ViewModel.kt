@@ -15,7 +15,7 @@ class ViewModel : ViewModel() {
 
     //TODO: Skal vises på fragment skærmen
     //TODO: Skal have den rigtige logik
-    private val _lives = MutableLiveData(0)
+    private val _lives = MutableLiveData(5)
     val lives: LiveData<Int>
         get() = _lives
 
@@ -55,11 +55,6 @@ class ViewModel : ViewModel() {
     private fun getNextWord() {
         currentWord = allWordsList.random()
     }
-
-    fun getlives() : LiveData<Int> {
-        return lives
-    }
-
 
     fun reinitializeData() {
         _score.value = 0

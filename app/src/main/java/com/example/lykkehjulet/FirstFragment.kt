@@ -41,7 +41,6 @@ class FirstFragment : Fragment() {
             if(viewModel.isUserWordCorrect(word)){
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
             }
-
         }
 
         binding.buttonSecond.setOnClickListener {
@@ -53,9 +52,12 @@ class FirstFragment : Fragment() {
             }
 
             println(viewModel.printword())
-            println(viewModel.getlives().value)
+            println(viewModel.lives.value)
             viewModel.wrongGuess(1)
             viewModel.increaseScore(10)
+
+            updateLives()
+            updateScore()
         }
 
 
@@ -77,6 +79,13 @@ class FirstFragment : Fragment() {
 
 
 
+    }
+    private fun updateLives(){
+        binding.lives.text = viewModel.lives.value.toString()
+    }
+
+    private fun updateScore(){
+        binding.score.text = viewModel.score.value.toString()
     }
 
     /*
