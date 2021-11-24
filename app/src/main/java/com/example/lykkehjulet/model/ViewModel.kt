@@ -70,9 +70,10 @@ class ViewModel : ViewModel() {
         if(currentWord.contains(playerLetter)){
             for (i in currentWord.indices){
                 if (currentWord[i] == playerLetter){
-                    guessWord[i] == playerLetter
+                   //TODO: DO this logic
                 }
             }
+            println(guessWord)
             return true
         }
         return false

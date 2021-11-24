@@ -49,7 +49,7 @@ class FirstFragment : Fragment() {
             }
             viewModel.wrongGuess(1)
             viewModel.increaseScore(10)
-            viewModel.initGuessWord()
+            //viewModel.initGuessWord()
 
             update()
         }
