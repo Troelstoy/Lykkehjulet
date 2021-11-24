@@ -23,6 +23,7 @@ class ViewModel : ViewModel() {
     val score: LiveData<Int>
         get() = _score
 
+
     private var wordsList: MutableList<String> = mutableListOf()
 
 
@@ -54,6 +55,10 @@ class ViewModel : ViewModel() {
 
     private fun getNextWord() {
         currentWord = allWordsList.random()
+    }
+
+    fun GuessWord(): String {
+        return currentWord
     }
 
     fun reinitializeData() {

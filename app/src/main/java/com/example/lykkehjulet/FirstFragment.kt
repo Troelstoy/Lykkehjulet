@@ -1,18 +1,15 @@
 package com.example.lykkehjulet
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.lykkehjulet.databinding.FragmentFirstBinding
 import com.example.lykkehjulet.model.ViewModel
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 //TODO: Kan ikke vise det nuværende ord ordentligt...
 /**
@@ -52,40 +49,30 @@ class FirstFragment : Fragment() {
             }
 
             println(viewModel.printword())
-            println(viewModel.lives.value)
+            println("Dit ord er: " + viewModel.currentWordView.value)
             viewModel.wrongGuess(1)
             viewModel.increaseScore(10)
 
-            updateLives()
-            updateScore()
+            update()
         }
+
+        /**
+         * Indlæser det rigtige ord
+         */
+        binding.currentword.text = viewModel.GuessWord()
+
 
 
         /**
          * Dummy måde at indsætte et tal på
          */
-        //Todo: Skal opdatere view
-
-        /*
-        val textView : TextView = view.findViewById(R.id.lives)
-        textView.text = viewModel.lives.toString
-
-         */
-
-        //TODO: Virker måske
-        binding.lives.text = viewModel.lives.value.toString()
-
-
-
-
+        ("Antal liv: " + viewModel.lives.value.toString()).also { binding.lives.text = it }
+        viewModel.score.value.toString().also { binding.score.text = it }
 
     }
-    private fun updateLives(){
-        binding.lives.text = viewModel.lives.value.toString()
-    }
-
-    private fun updateScore(){
-        binding.score.text = viewModel.score.value.toString()
+    private fun update(){
+        ("Antal liv: " + viewModel.lives.value.toString()).also { binding.lives.text = it }
+        viewModel.score.value.toString().also { binding.score.text = it }
     }
 
     /*
