@@ -56,7 +56,8 @@ class FirstFragment : Fragment() {
         /**
          * Indlæser det rigtige ord
          */
-        binding.currentword.text = viewModel.initGuessWord()
+        viewModel.initGuessWord()
+        binding.currentword.text = viewModel.guessWord
 
 
         /**

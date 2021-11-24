@@ -13,8 +13,6 @@ import com.example.lykkehjulet.allWordsList
 
 class ViewModel : ViewModel() {
 
-    //TODO: Skal vises på fragment skærmen
-    //TODO: Skal have den rigtige logik
     private val _lives = MutableLiveData(5)
     val lives: LiveData<Int>
         get() = _lives
@@ -34,7 +32,7 @@ class ViewModel : ViewModel() {
 
     private lateinit var currentWord: String
 
-    private lateinit var guessWord :String
+    lateinit var guessWord :String
 
     private fun getNextWord() {
         currentWord = allWordsList.random()
@@ -70,10 +68,12 @@ class ViewModel : ViewModel() {
         if(currentWord.contains(playerLetter)){
             for (i in currentWord.indices){
                 if (currentWord[i] == playerLetter){
-                   //TODO: DO this logic
+                    guessWord.replaceRange(1,1,"e")
                 }
             }
+
             println(guessWord)
+
             return true
         }
         return false
