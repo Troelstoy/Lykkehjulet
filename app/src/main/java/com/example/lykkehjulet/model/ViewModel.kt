@@ -41,19 +41,16 @@ class ViewModel : ViewModel() {
         currentWord = allWordsList.random()
     }
 
-    fun GuessWord(): String {
-
-        guessWord = currentWord.replaceRange(0, 6, " - ")
-
+    fun initGuessWord(): String {
         val builder = StringBuilder()
-
         for (i in 0..currentWord.length){
-            builder.append(" - ")
+            builder.append("- ")
         }
 
-        println(currentWord)
+        guessWord = builder.toString()
 
-        return builder.toString()
+
+        return guessWord
     }
 
     fun reinitializeData() {

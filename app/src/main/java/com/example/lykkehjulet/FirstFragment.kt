@@ -49,14 +49,14 @@ class FirstFragment : Fragment() {
             }
             viewModel.wrongGuess(1)
             viewModel.increaseScore(10)
-            viewModel.GuessWord()
+            viewModel.initGuessWord()
 
             update()
         }
         /**
          * Indlæser det rigtige ord
          */
-        binding.currentword.text = viewModel.GuessWord()
+        binding.currentword.text = viewModel.initGuessWord()
 
 
         /**
