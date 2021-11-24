@@ -65,12 +65,13 @@ class FirstFragment : Fragment() {
          */
         ("Antal liv: " + viewModel.lives.value.toString()).also { binding.lives.text = it }
         ("Score: " + viewModel.score.value.toString()).also { binding.score.text = it }
-        binding.currentword.text = viewModel.guessWord
+
 
     }
     private fun update(){
         ("Antal liv: " + viewModel.lives.value.toString()).also { binding.lives.text = it }
         ("Score: " + viewModel.score.value.toString()).also { binding.score.text = it }
+        binding.currentword.text = viewModel.guessWord
     }
 
     /*

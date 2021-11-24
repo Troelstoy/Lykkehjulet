@@ -43,9 +43,7 @@ class ViewModel : ViewModel() {
         for (i in currentWord.indices){
             builder.append("-")
         }
-
         guessWord = builder.toString()
-
 
         return guessWord
     }
