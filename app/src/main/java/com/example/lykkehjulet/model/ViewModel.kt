@@ -34,13 +34,26 @@ class ViewModel : ViewModel() {
 
     private lateinit var currentWord: String
 
+    private lateinit var guessWord :String
+
 
     private fun getNextWord() {
         currentWord = allWordsList.random()
     }
 
     fun GuessWord(): String {
-        return currentWord
+
+        guessWord = currentWord.replaceRange(0, 6, " - ")
+
+        val builder = StringBuilder()
+
+        for (i in 0..currentWord.length){
+            builder.append(" - ")
+        }
+
+        println(currentWord)
+
+        return builder.toString()
     }
 
     fun reinitializeData() {
@@ -62,12 +75,6 @@ class ViewModel : ViewModel() {
             return true
         }
         return false
-    }
-
-    //TODO: Skal slettes
-    fun printword() {
-        println(currentWord)
-
     }
 
     fun increaseScore(amount : Int) {

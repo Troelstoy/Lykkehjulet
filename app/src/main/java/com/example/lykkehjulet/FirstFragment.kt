@@ -49,6 +49,7 @@ class FirstFragment : Fragment() {
             }
             viewModel.wrongGuess(1)
             viewModel.increaseScore(10)
+            viewModel.GuessWord()
 
             update()
         }
@@ -57,16 +58,17 @@ class FirstFragment : Fragment() {
          */
         binding.currentword.text = viewModel.GuessWord()
 
+
         /**
          * Dummy måde at indsætte et tal på
          */
         ("Antal liv: " + viewModel.lives.value.toString()).also { binding.lives.text = it }
-        viewModel.score.value.toString().also { binding.score.text = it }
+        ("Score: " + viewModel.score.value.toString()).also { binding.score.text = it }
 
     }
     private fun update(){
         ("Antal liv: " + viewModel.lives.value.toString()).also { binding.lives.text = it }
-        viewModel.score.value.toString().also { binding.score.text = it }
+        ("Score: " + viewModel.score.value.toString()).also { binding.score.text = it }
     }
 
     /*
