@@ -27,24 +27,6 @@ class ViewModel : ViewModel() {
     private var wordsList: MutableList<String> = mutableListOf()
 
 
-    //TODO: Bliver ikke sat til nogen værdi
-    private val _currentWordView = MutableLiveData<String>()
-    val currentWordView : LiveData<Spannable> = Transformations.map(_currentWordView) {
-        if (it == null) {
-            SpannableString("")
-        } else {
-            val currentWordView = it.toString()
-            val spannable: Spannable = SpannableString(currentWordView)
-            spannable.setSpan(
-                TtsSpan.VerbatimBuilder(currentWordView).build(),
-                0,
-                currentWordView.length,
-                Spannable.SPAN_INCLUSIVE_INCLUSIVE
-            )
-            spannable
-        }
-    }
-
     init {
         getNextWord()
         println(currentWord)

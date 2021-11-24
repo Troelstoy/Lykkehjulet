@@ -42,26 +42,20 @@ class FirstFragment : Fragment() {
 
         binding.buttonSecond.setOnClickListener {
             val word : String = binding.textField.text.toString()
-            if(word.length != 0 && word.length == 1){
+            if(word.isNotEmpty() && word.length == 1){
 
             val letter : Char = word[0]
                 println(viewModel.isUserLetterCorrect(letter))
             }
-
-            println(viewModel.printword())
-            println("Dit ord er: " + viewModel.currentWordView.value)
             viewModel.wrongGuess(1)
             viewModel.increaseScore(10)
 
             update()
         }
-
         /**
          * Indlæser det rigtige ord
          */
         binding.currentword.text = viewModel.GuessWord()
-
-
 
         /**
          * Dummy måde at indsætte et tal på
