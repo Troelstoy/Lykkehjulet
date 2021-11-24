@@ -40,7 +40,7 @@ class ViewModel : ViewModel() {
 
     fun initGuessWord(): String {
         val builder = StringBuilder()
-        for (i in 0..currentWord.length){
+        for (i in currentWord.indices){
             builder.append("-")
         }
 
@@ -66,13 +66,14 @@ class ViewModel : ViewModel() {
 
     fun isUserLetterCorrect(playerLetter : Char) :Boolean{
         if(currentWord.contains(playerLetter)){
+            println("Guessword inden " + guessWord)
             for (i in currentWord.indices){
                 if (currentWord[i] == playerLetter){
-                    guessWord.replaceRange(1,1,"e")
+                    guessWord = guessWord.replaceRange(i,i+1,playerLetter.toString())
                 }
             }
 
-            println(guessWord)
+            println("Guessword efter " + guessWord)
 
             return true
         }
@@ -82,6 +83,7 @@ class ViewModel : ViewModel() {
     fun increaseScore(amount : Int) {
         _score.value = (_score.value)?.plus(amount)
         println(currentWord)
+        println(guessWord)
     }
 
     fun wrongGuess(amount: Int){
