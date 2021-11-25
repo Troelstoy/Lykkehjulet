@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.lykkehjulet.databinding.FragmentFirstBinding
 import com.example.lykkehjulet.model.ViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 
 //TODO: Skal vise eller holde styr på hvilke bogstaver der er gættet på
 //TODO: Skal have selve lykkehjul elementet med
@@ -75,6 +76,14 @@ class FirstFragment : Fragment() {
         ("Antal liv: " + viewModel.lives.value.toString()).also { binding.lives.text = it }
         ("Score: " + viewModel.score.value.toString()).also { binding.score.text = it }
 
+
+
+
+        binding.spinwheel.setOnClickListener {
+        val snack = Snackbar.make(view, "this is a sample", Snackbar.LENGTH_LONG)
+            snack.show()
+
+        }
 
 
     }
