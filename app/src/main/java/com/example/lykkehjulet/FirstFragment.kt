@@ -18,7 +18,7 @@ import com.google.android.material.snackbar.Snackbar
 //TODO: Skal have selve lykkehjul elementet med
 //TODO: Skal vise kategorien af ord
 //TODO: Implmenter spinning wheel
-//TODO: Skal vise kategorien på startsiden
+//TODO: Tilføj logik der checker om input er validt
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
