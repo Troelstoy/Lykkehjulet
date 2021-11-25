@@ -16,4 +16,5 @@
 
     <string name="score">Score: %d</string>
     <string name="helper_text">Indtast dit gæt</string>
+    <string name="spin_hjulet">Spin Lykkehjulet</string>
 </resources>

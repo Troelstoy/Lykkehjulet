@@ -37,10 +37,11 @@
                 android:text="@string/Guess_Letter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.179"
+                app:layout_constraintHorizontal_bias="0.175"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textField_layout"
-                app:layout_constraintVertical_bias="0.27" />
+                app:layout_constraintVertical_bias="0.0" />
+
 
             <Button
                 android:id="@+id/button_first"
@@ -50,17 +51,16 @@
                 android:text="@string/Guess_Word"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.817"
+                app:layout_constraintHorizontal_bias="0.827"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textField_layout"
-                app:layout_constraintVertical_bias="0.27" />
-
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/currentword"
                 android:layout_width="wrap_content"
                 android:layout_height="53dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="24dp"
                 android:textSize="40sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
@@ -73,10 +73,11 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="46dp"
+                android:layout_marginTop="20dp"
                 android:hint="Indtast dit gæt"
                 app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/currentword">
 
@@ -107,6 +108,21 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
                 tools:text="Liv : 5" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="169dp"
+                android:layout_marginTop="102dp"
+                android:layout_marginEnd="148dp"
+                android:text="@string/spin_hjulet"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.756"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_second"
+                app:layout_constraintVertical_bias="0.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
