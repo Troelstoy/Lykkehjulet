@@ -75,6 +75,7 @@ class ViewModel : ViewModel() {
 
             return true
         }
+        wrongGuess(1)
         return false
     }
 

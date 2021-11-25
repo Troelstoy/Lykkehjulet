@@ -12,7 +12,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.lykkehjulet.databinding.FragmentFirstBinding
 import com.example.lykkehjulet.model.ViewModel
 
-//TODO: Kan ikke vise det nuværende ord ordentligt...
+//TODO: Skal vise eller holde styr på hvilke bogstaver der er gættet på
+//TODO: Skal have selve lykkehjul elementet med
+//TODO: Skal vise kategorien af ord
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
@@ -48,7 +50,6 @@ class FirstFragment : Fragment() {
             val letter : Char = word[0]
                 println(viewModel.isUserLetterCorrect(letter))
             }
-            viewModel.wrongGuess(1)
             viewModel.increaseScore(10)
             //viewModel.initGuessWord()
 
