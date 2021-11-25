@@ -16,6 +16,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 //TODO: Skal vise eller holde styr på hvilke bogstaver der er gættet på
 //TODO: Skal have selve lykkehjul elementet med
 //TODO: Skal vise kategorien af ord
+//TODO: Implmenter spinning wheel
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
