@@ -73,21 +73,22 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:layout_marginTop="184dp"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="184dp"
+            android:layout_marginBottom="1dp"
             android:hint="Indtast dit gæt"
             app:endIconMode="clear_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.466"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/currentword">
+            app:layout_constraintTop_toBottomOf="@+id/currentword"
+            app:layout_constraintVertical_bias="0.0">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textField"
-                android:layout_width="340dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="30dp"
                 android:inputType="textPersonName|textNoSuggestions"
                 android:maxLines="1"
                 android:minHeight="48dp"

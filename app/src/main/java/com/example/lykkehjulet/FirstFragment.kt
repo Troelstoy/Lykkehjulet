@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.lykkehjulet.databinding.FragmentFirstBinding
 import com.example.lykkehjulet.model.ViewModel
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 //TODO: Skal vise eller holde styr på hvilke bogstaver der er gættet på
 //TODO: Skal have selve lykkehjul elementet med
@@ -81,6 +82,7 @@ class FirstFragment : Fragment() {
         binding.currentword.text = viewModel.guessWord
     }
 
+    //TODO: Implement
     /*
     private fun showFinalScoreDialog() {
         MaterialAlertDialogBuilder(requireContext())
