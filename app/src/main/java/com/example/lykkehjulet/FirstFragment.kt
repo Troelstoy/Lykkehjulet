@@ -45,6 +45,7 @@ class FirstFragment : Fragment() {
             if(viewModel.isUserWordCorrect(word)){
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
             }
+            setVisibilitySpin()
         }
 
         binding.buttonSecond.setOnClickListener {
@@ -55,6 +56,7 @@ class FirstFragment : Fragment() {
                 println(viewModel.isUserLetterCorrect(letter))
             }
             update()
+            setVisibilitySpin()
 
         }
         /**
@@ -79,12 +81,16 @@ class FirstFragment : Fragment() {
         val snack = Snackbar.make(view, "this is a sample", Snackbar.LENGTH_LONG)
             snack.show()
 
+            setVisibilityGuess()
+
             viewModel.increaseScore(10)
 
             update()
 
 
         }
+
+        setVisibilitySpin()
 
 
     }
@@ -94,9 +100,15 @@ class FirstFragment : Fragment() {
         binding.currentword.text = viewModel.guessWord
     }
 
-    private fun setVisibility(){
+    private fun setVisibilitySpin(){
         binding.buttonFirst.visibility = View.INVISIBLE
         binding.buttonSecond.visibility = View.INVISIBLE
+        binding.spinwheel.visibility = View.VISIBLE
+    }
+
+    private fun setVisibilityGuess(){
+        binding.buttonFirst.visibility = View.VISIBLE
+        binding.buttonSecond.visibility = View.VISIBLE
         binding.spinwheel.visibility = View.INVISIBLE
     }
 

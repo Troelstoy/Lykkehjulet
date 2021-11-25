@@ -114,18 +114,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="169dp"
-                android:layout_marginTop="102dp"
                 android:layout_marginEnd="148dp"
                 android:text="@string/spin_hjulet"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.756"
+                app:layout_constraintHorizontal_bias="0.452"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/button_second"
                 app:layout_constraintVertical_bias="0.0" />
-
-
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
