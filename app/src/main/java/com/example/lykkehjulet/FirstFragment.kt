@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -51,7 +52,9 @@ class FirstFragment : Fragment() {
             viewModel.increaseScore(10)
             //viewModel.initGuessWord()
 
+
             update()
+
         }
         /**
          * Indlæser det rigtige ord
@@ -60,11 +63,14 @@ class FirstFragment : Fragment() {
         binding.currentword.text = viewModel.guessWord
 
 
+
+
         /**
          * Dummy måde at indsætte et tal på
          */
         ("Antal liv: " + viewModel.lives.value.toString()).also { binding.lives.text = it }
         ("Score: " + viewModel.score.value.toString()).also { binding.score.text = it }
+
 
 
     }

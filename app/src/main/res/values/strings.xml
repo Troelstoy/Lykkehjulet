@@ -15,4 +15,5 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
     <string name="score">Score: %d</string>
+    <string name="helper_text">Indtast dit gæt</string>
 </resources>
