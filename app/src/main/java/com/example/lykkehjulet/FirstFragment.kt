@@ -1,5 +1,6 @@
 package com.example.lykkehjulet
 
+import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -31,6 +32,7 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_first, container, false)
         return binding.root
@@ -76,7 +78,9 @@ class FirstFragment : Fragment() {
 
 
 
-
+        /**
+         * Button for spinning the wheel
+         */
         binding.spinwheel.setOnClickListener {
         val snack = Snackbar.make(view, "this is a sample", Snackbar.LENGTH_LONG)
             snack.show()
@@ -94,10 +98,12 @@ class FirstFragment : Fragment() {
 
 
     }
+
     private fun update(){
         ("Antal liv: " + viewModel.lives.value.toString()).also { binding.lives.text = it }
         ("Score: " + viewModel.score.value.toString()).also { binding.score.text = it }
         binding.currentword.text = viewModel.guessWord
+        isGameover()
     }
 
     private fun setVisibilitySpin(){
@@ -137,6 +143,12 @@ class FirstFragment : Fragment() {
 
     private fun exitGame() {
         activity?.finish()
+    }
+
+    private fun isGameover(){
+        if(viewModel.lives.value!! <= 0){
+            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        }
     }
 
 }
