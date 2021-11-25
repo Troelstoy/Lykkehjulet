@@ -44,6 +44,8 @@ class FirstFragment : Fragment() {
         binding.buttonFirst.setOnClickListener {
             val word : String = binding.textField.text.toString()
 
+            findNavController().navigate(R.id.action_FirstFragment_to_highScores)
+
             if(viewModel.isUserWordCorrect(word)){
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
             }
