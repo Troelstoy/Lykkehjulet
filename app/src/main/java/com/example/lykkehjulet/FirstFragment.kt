@@ -54,10 +54,6 @@ class FirstFragment : Fragment() {
             val letter : Char = word[0]
                 println(viewModel.isUserLetterCorrect(letter))
             }
-            viewModel.increaseScore(10)
-            //viewModel.initGuessWord()
-
-
             update()
 
         }
@@ -82,6 +78,10 @@ class FirstFragment : Fragment() {
         binding.spinwheel.setOnClickListener {
         val snack = Snackbar.make(view, "this is a sample", Snackbar.LENGTH_LONG)
             snack.show()
+
+            viewModel.increaseScore(10)
+
+            update()
 
 
         }
