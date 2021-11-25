@@ -94,6 +94,12 @@ class FirstFragment : Fragment() {
         binding.currentword.text = viewModel.guessWord
     }
 
+    private fun setVisibility(){
+        binding.buttonFirst.visibility = View.INVISIBLE
+        binding.buttonSecond.visibility = View.INVISIBLE
+        binding.spinwheel.visibility = View.INVISIBLE
+    }
+
     //TODO: Implement
     /*
     private fun showFinalScoreDialog() {
