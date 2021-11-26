@@ -153,6 +153,10 @@ class GameFragment : Fragment() {
         if(viewModel.lives.value!! <= 0){
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+        if(viewModel.wordisGuessed()){
+            println("Du har vundet")
+        }
+
 
     }
 

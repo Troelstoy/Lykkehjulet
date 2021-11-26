@@ -3,7 +3,6 @@ package com.example.lykkehjulet.model
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.navigation.Navigation.findNavController
 import com.example.lykkehjulet.*
 import java.lang.Boolean.FALSE
 import java.lang.Boolean.TRUE
@@ -11,6 +10,7 @@ import java.lang.Boolean.TRUE
 //TODO: Får en fejl der siger no adapter attached; skipping layout
 
 class ViewModel : ViewModel() {
+    private var _isGameWon = false
 
     private val _lives = MutableLiveData(5)
     val lives: LiveData<Int>
@@ -74,7 +74,7 @@ class ViewModel : ViewModel() {
 
     fun isUserLetterCorrect(playerLetter : Char) :Boolean{
         if(currentWord.uppercase().contains(playerLetter.uppercase())){
-            revealLetter(playerLetter)
+            showLetter(playerLetter)
 
             isUserWordCorrect(guessWord)
             return true
@@ -127,12 +127,19 @@ class ViewModel : ViewModel() {
         return wheelResult.description
     }
 
-    private fun revealLetter(playerLetter: Char) {
+    private fun showLetter(playerLetter: Char) {
         for (i in currentWord.indices){
             if (currentWord[i].uppercase() == playerLetter.uppercase()){
                 guessWord = guessWord.replaceRange(i,i+1,playerLetter.toString())
             }
         }
+    }
+
+    fun wordisGuessed() : Boolean{
+        if(guessWord == currentWord){
+            return true
+        }
+        return false
     }
 
 }
