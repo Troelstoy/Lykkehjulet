@@ -3,10 +3,8 @@ package com.example.lykkehjulet.model
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.lykkehjulet.Danmarkshistorien
-import com.example.lykkehjulet.StederKBH
-import com.example.lykkehjulet.categories
-import com.example.lykkehjulet.randomWords
+import androidx.navigation.Navigation.findNavController
+import com.example.lykkehjulet.*
 import java.lang.Boolean.FALSE
 import java.lang.Boolean.TRUE
 
@@ -81,9 +79,11 @@ class ViewModel : ViewModel() {
                     guessWord = guessWord.replaceRange(i,i+1,playerLetter.toString())
                 }
             }
+            println(guessWord + " Er det nuværende ord der er fundet")
+            isUserWordCorrect(guessWord)
             return true
         }
-        changeUserLife(1)
+        changeUserLife(-1)
         return false
     }
 
@@ -103,8 +103,8 @@ class ViewModel : ViewModel() {
 
         //TODO: Skal slettes
         println(currentWord)
-        println(guessWord)
-        println(currentCategoryString)
+        //println(guessWord)
+        //println(currentCategoryString)
 
     }
 

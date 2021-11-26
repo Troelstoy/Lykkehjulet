@@ -18,7 +18,8 @@ import com.google.android.material.snackbar.Snackbar
 //TODO: Implmenter spinning wheel
 //TODO: Tilføj logik der checker om input er validt
 //TODO: Kan ikke navigere til higscores skærmen
-//TODO: Vis en warning når der ikke bliver givet input i gæt
+//TODO: Vis en warning når der ikke bliver givet rigtigt input i gæt
+//TODO: Man vinder ikke hvis man gætter alle bogstaverne
 /**
  * A [Fragment] subclass as the default destination in the navigation.
  */
@@ -106,7 +107,7 @@ class GameFragment : Fragment() {
         ("Antal liv: " + viewModel.lives.value.toString()).also { binding.lives.text = it }
         ("Score: " + viewModel.score.value.toString()).also { binding.score.text = it }
         binding.currentword.text = viewModel.guessWord
-        isGameover()
+        isGameOver()
     }
 
     private fun setVisibilitySpin(){
@@ -148,10 +149,11 @@ class GameFragment : Fragment() {
         activity?.finish()
     }
 
-    private fun isGameover(){
+    private fun isGameOver(){
         if(viewModel.lives.value!! <= 0){
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+
     }
 
 }
