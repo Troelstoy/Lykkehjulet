@@ -91,7 +91,7 @@ class GameFragment : Fragment() {
 
             setVisibilityGuess()
 
-            viewModel.increaseScore(10)
+            viewModel.increaseScore()
 
             update()
 

@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.lykkehjulet.randomWords
+import kotlin.random.Random
 
 //TODO: Får en fejl der siger no adapter attached; skipping layout
 
@@ -75,8 +76,16 @@ class ViewModel : ViewModel() {
         return false
     }
 
-    fun increaseScore(amount : Int) {
-        _score.value = (_score.value)?.plus(amount)
+    fun increaseScore() {
+
+        val rand = (0..3).random()
+        when (rand){
+            1 -> _score.value = (_score.value)?.plus(500)
+            2 -> _score.value = (_score.value)?.plus(700)
+            3 -> _score.value = (_score.value)?.plus(1000)
+        }
+
+
         println(currentWord)
         println(guessWord)
     }
