@@ -19,7 +19,8 @@ val Danmarkshistorien: List<String> =
     listOf(
         "Vikinger",
         "Kalmarunionen",
-        "Dybbøl-mølle"
+        "Vikingehjelm",
+        "Solvognen",
     )
 
 // List with all the words for the Game

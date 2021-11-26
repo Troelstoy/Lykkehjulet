@@ -17,11 +17,10 @@ import com.google.android.material.snackbar.Snackbar
 
 //TODO: Skal vise eller holde styr på hvilke bogstaver der er gættet på
 //TODO: Skal have selve lykkehjul elementet med
-//TODO: Skal vise kategorien af ord
 //TODO: Implmenter spinning wheel
 //TODO: Tilføj logik der checker om input er validt
 //TODO: Kan ikke navigere til higscores skærmen
-//TODO: Vis en warning når der ikke bliver giveet input i gæt
+//TODO: Vis en warning når der ikke bliver givet input i gæt
 /**
  * A [Fragment] subclass as the default destination in the navigation.
  */

@@ -9,7 +9,6 @@ import com.example.lykkehjulet.categories
 import com.example.lykkehjulet.randomWords
 
 //TODO: Får en fejl der siger no adapter attached; skipping layout
-//TODO: Alle ord skal være i caps
 
 class ViewModel : ViewModel() {
 
@@ -67,14 +66,14 @@ class ViewModel : ViewModel() {
     }
 
     fun isUserWordCorrect(playerWord: String): Boolean {
-        if (playerWord.equals(currentWord, true)) {
+        if (playerWord.uppercase().equals(currentWord.uppercase())) {
             return true
         }
         return false
     }
 
     fun isUserLetterCorrect(playerLetter : Char) :Boolean{
-        if(currentWord.contains(playerLetter)){
+        if(currentWord.contains(playerLetter.lowercaseChar()) || currentWord.contains(playerLetter.uppercaseChar())){
             for (i in currentWord.indices){
                 if (currentWord[i] == playerLetter){
                     guessWord = guessWord.replaceRange(i,i+1,playerLetter.toString())
