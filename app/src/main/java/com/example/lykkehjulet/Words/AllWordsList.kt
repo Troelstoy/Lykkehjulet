@@ -1,10 +1,11 @@
 package com.example.lykkehjulet
 
 
-val Categories: List<String> =
+val categories: List<String> =
     listOf(
-        "Steder i København",
+        "Steder i Kbh",
         "Danmarkshistorien",
+        "Random"
 
     )
 

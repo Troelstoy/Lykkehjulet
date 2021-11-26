@@ -64,6 +64,7 @@ class GameFragment : Fragment() {
             update()
             setVisibilitySpin()
 
+
         }
         /**
          * Indlæser det rigtige ord

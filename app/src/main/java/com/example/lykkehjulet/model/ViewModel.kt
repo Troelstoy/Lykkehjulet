@@ -3,10 +3,13 @@ package com.example.lykkehjulet.model
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.lykkehjulet.Danmarkshistorien
+import com.example.lykkehjulet.StederKBH
+import com.example.lykkehjulet.categories
 import com.example.lykkehjulet.randomWords
-import kotlin.random.Random
 
 //TODO: Får en fejl der siger no adapter attached; skipping layout
+//TODO: Alle ord skal være i caps
 
 class ViewModel : ViewModel() {
 
@@ -24,15 +27,27 @@ class ViewModel : ViewModel() {
 
     init {
         getNextWord()
-        println(currentWord)
     }
 
     private lateinit var currentWord: String
+    private lateinit var currentCategoryList : List<String>
+    private lateinit var currentCategoryString : String
 
     lateinit var guessWord :String
 
+    private fun getCategory(){
+        val category = categories.random()
+        when (category){
+            "Steder i Kbh" -> currentCategoryList = StederKBH
+            "Danmarkshistorien" -> currentCategoryList = Danmarkshistorien
+            "Random" -> currentCategoryList = randomWords
+        }
+        currentCategoryString = category
+    }
+
     private fun getNextWord() {
-        currentWord = randomWords.random()
+        getCategory()
+        currentWord = currentCategoryList.random()
     }
 
     fun initGuessWord(): String {
@@ -53,7 +68,6 @@ class ViewModel : ViewModel() {
 
     fun isUserWordCorrect(playerWord: String): Boolean {
         if (playerWord.equals(currentWord, true)) {
-            //increaseScore()
             return true
         }
         return false
@@ -61,15 +75,11 @@ class ViewModel : ViewModel() {
 
     fun isUserLetterCorrect(playerLetter : Char) :Boolean{
         if(currentWord.contains(playerLetter)){
-            println("Guessword inden " + guessWord)
             for (i in currentWord.indices){
                 if (currentWord[i] == playerLetter){
                     guessWord = guessWord.replaceRange(i,i+1,playerLetter.toString())
                 }
             }
-
-            println("Guessword efter " + guessWord)
-
             return true
         }
         wrongGuess(1)
@@ -86,8 +96,11 @@ class ViewModel : ViewModel() {
         }
 
 
+        //TODO: Skal slettes
         println(currentWord)
         println(guessWord)
+        println(currentCategoryString)
+
     }
 
     fun wrongGuess(amount: Int){
