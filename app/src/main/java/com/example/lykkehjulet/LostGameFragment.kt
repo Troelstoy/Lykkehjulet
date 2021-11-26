@@ -1,5 +1,6 @@
 package com.example.lykkehjulet
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.lykkehjulet.databinding.FragmentSecondBinding
 import com.example.lykkehjulet.model.ViewModel
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -41,10 +43,31 @@ class LostGameFragment : Fragment() {
         binding.buttonSecond.setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
+
+        binding.
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    @SuppressLint("StringFormatInvalid")
+    private fun showFinalScoreDialog() {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(getString(R.string.lossgame))
+            .setMessage(getString(R.string.you_scored, viewModel.score.value))
+            .setCancelable(false)
+            .setNegativeButton(getString(R.string.exit)) { _, _ ->
+                exitGame()
+            }
+            .setPositiveButton(getString(R.string.play_again)) { _, _ ->
+               findNavController().navigate(R.id.action_highScores_to_FirstFragment)
+            }
+            .show()
+    }
+
+    private fun exitGame() {
+        activity?.finish()
     }
 }

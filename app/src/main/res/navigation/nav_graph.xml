@@ -9,7 +9,7 @@
         android:id="@+id/FirstFragment"
         android:name="com.example.lykkehjulet.GameFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/GameFragment">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
@@ -32,5 +32,9 @@
         android:id="@+id/highScores"
         android:name="com.example.lykkehjulet.WonGameFragment"
         android:label="fragment_high_scores"
-        tools:layout="@layout/fragment_high_scores" />
+        tools:layout="@layout/fragment_high_scores" >
+        <action
+            android:id="@+id/action_highScores_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
 </navigation>

@@ -17,4 +17,8 @@
     <string name="score">Score: %d</string>
     <string name="helper_text">Indtast dit gæt</string>
     <string name="spin_hjulet">Spin Lykkehjulet</string>
+    <string name="lossgame">Du har tabt :(</string>
+    <string name="exit">Luk App</string>
+    <string name="you_scored">"Dine point: "</string>
+    <string name="play_again">Spil igen</string>
 </resources>

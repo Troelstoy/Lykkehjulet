@@ -8,9 +8,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.lykkehjulet.databinding.FragmentFirstBinding
+import com.example.lykkehjulet.databinding.GameFragmentBinding
 import com.example.lykkehjulet.model.ViewModel
-import com.example.lykkehjulet.model.spinWheelTypes
 import com.google.android.material.snackbar.Snackbar
 
 //TODO: Skal vise eller holde styr på hvilke bogstaver der er gættet på
@@ -25,7 +24,7 @@ import com.google.android.material.snackbar.Snackbar
  */
 class GameFragment : Fragment() {
 
-    private lateinit var binding: FragmentFirstBinding
+    private lateinit var binding: GameFragmentBinding
     private val viewModel: ViewModel by viewModels()
 
     override fun onCreateView(
@@ -34,7 +33,7 @@ class GameFragment : Fragment() {
     ): View? {
 
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_first, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.GameFragment, container, false)
         return binding.root
     }
 
@@ -137,7 +136,9 @@ class GameFragment : Fragment() {
             }
             .show()
     }
+
      */
+
 
 
     private fun restartGame() {
