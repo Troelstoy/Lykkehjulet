@@ -86,9 +86,8 @@ class GameFragment : Fragment() {
          * Button for spinning the wheel
          */
         binding.spinwheel.setOnClickListener {
-            viewModel.spinWheel()
 
-        val snack = Snackbar.make(view, "this is a sample", Snackbar.LENGTH_LONG)
+        val snack = Snackbar.make(view, viewModel.spinWheel(), Snackbar.LENGTH_LONG)
             snack.show()
             setVisibilityGuess()
             update()

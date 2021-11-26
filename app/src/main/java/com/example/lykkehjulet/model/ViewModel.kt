@@ -7,6 +7,8 @@ import com.example.lykkehjulet.Danmarkshistorien
 import com.example.lykkehjulet.StederKBH
 import com.example.lykkehjulet.categories
 import com.example.lykkehjulet.randomWords
+import java.lang.Boolean.FALSE
+import java.lang.Boolean.TRUE
 
 //TODO: Får en fejl der siger no adapter attached; skipping layout
 
@@ -81,17 +83,21 @@ class ViewModel : ViewModel() {
             }
             return true
         }
-        wrongGuess(1)
+        changeUserLife(1)
         return false
     }
 
-    fun increaseScore() {
+    fun changeScore(isPlayerBankrupt : Boolean) {
 
-        val rand = (0..3).random()
-        when (rand){
-            1 -> _score.value = (_score.value)?.plus(500)
-            2 -> _score.value = (_score.value)?.plus(700)
-            3 -> _score.value = (_score.value)?.plus(1000)
+        if(isPlayerBankrupt == TRUE){
+            _score.value = 0
+        } else {
+            val rand = (0..3).random()
+            when (rand) {
+                1 -> _score.value = (_score.value)?.plus(500)
+                2 -> _score.value = (_score.value)?.plus(700)
+                3 -> _score.value = (_score.value)?.plus(1000)
+            }
         }
 
 
@@ -102,25 +108,35 @@ class ViewModel : ViewModel() {
 
     }
 
-    fun wrongGuess(amount: Int){
-        _lives.value =(_lives.value)?.minus(amount)
+    fun changeUserLife(amount: Int){
+        _lives.value =(_lives.value)?.plus(amount)
     }
 
 
-    fun spinWheel() {
-        val rand = (0.. spinWheelTypes.values().size).random()
-
+    fun spinWheel() : String {
+        val rand = (0.. spinWheelTypes.values().size-1).random()
         val wheelResult = spinWheelTypes.values()[rand]
 
-        println("Du har spunnet $wheelResult")
+        when (wheelResult){
+            spinWheelTypes.INCREASE_SCORE -> changeScore(FALSE)
+            spinWheelTypes.BANKRUPT       -> changeScore(TRUE)
+            spinWheelTypes.INCREASE_LIFE -> changeUserLife(1)
+            spinWheelTypes.DECREASE_LIFE  -> changeUserLife(-1)
+        }
 
+        println(wheelResult.description)
+
+        return wheelResult.description
     }
 
 
 }
 
-enum class spinWheelTypes(){
-    INCREASE_SCORE,INCREASE_LIFES, DECREASE_SCORE, DECREASE_LIFE
+enum class spinWheelTypes(val description : String){
+    INCREASE_SCORE("Du får flere point!"),
+    INCREASE_LIFE ("Du har fået et ekstra liv"),
+    BANKRUPT ("Du er gået fallit"),
+    DECREASE_LIFE("Du har mistet et liv")
 }
 
 
