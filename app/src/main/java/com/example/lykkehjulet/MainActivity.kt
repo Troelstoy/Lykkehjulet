@@ -12,6 +12,7 @@ import android.view.MenuItem
 import com.example.lykkehjulet.databinding.ActivityMainBinding
 
 //TODO: Alle fragments skal kobles op på den samme viewmodel
+//TODO: Refactor så alt giver mening
 
 
 class MainActivity : AppCompatActivity() {
