@@ -74,18 +74,16 @@ class ViewModel : ViewModel() {
 
     fun isUserLetterCorrect(playerLetter : Char) :Boolean{
         if(currentWord.uppercase().contains(playerLetter.uppercase())){
-            for (i in currentWord.indices){
-                if (currentWord[i].uppercase() == playerLetter.uppercase()){
-                    guessWord = guessWord.replaceRange(i,i+1,playerLetter.toString())
-                }
-            }
-            println(guessWord + " Er det nuværende ord der er fundet")
+            revealLetter(playerLetter)
+
             isUserWordCorrect(guessWord)
             return true
         }
         changeUserLife(-1)
         return false
     }
+
+
 
     fun changeScore(isPlayerBankrupt : Boolean) {
 
@@ -129,6 +127,13 @@ class ViewModel : ViewModel() {
         return wheelResult.description
     }
 
+    private fun revealLetter(playerLetter: Char) {
+        for (i in currentWord.indices){
+            if (currentWord[i].uppercase() == playerLetter.uppercase()){
+                guessWord = guessWord.replaceRange(i,i+1,playerLetter.toString())
+            }
+        }
+    }
 
 }
 
@@ -138,6 +143,8 @@ enum class spinWheelTypes(val description : String){
     BANKRUPT ("Du er gået fallit"),
     DECREASE_LIFE("Du har mistet et liv")
 }
+
+
 
 
 
