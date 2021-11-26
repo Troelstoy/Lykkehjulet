@@ -12,11 +12,15 @@ import com.example.lykkehjulet.databinding.FragmentSecondBinding
 import com.example.lykkehjulet.model.ViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
+//TODO: Skal vise et billede på midten
+//TODO: Skal vise en besked når spilleren trykker spil igen som spørger om man er sikker fordi man lige har tabt
+//TODO: Skal lave sjov med spilleren når spilleren prøver at lukke spillet
+
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 
-//TODO: Skal bruge recyclerview til at vise highscores
+
 class LostGameFragment : Fragment() {
 
     private val viewModel: ViewModel by viewModels()
