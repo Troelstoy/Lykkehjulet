@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.lykkehjulet.databinding.GameFragmentBinding
+import com.example.lykkehjulet.databinding.GamefragmentBinding
 import com.example.lykkehjulet.model.ViewModel
 import com.google.android.material.snackbar.Snackbar
 
@@ -24,7 +24,7 @@ import com.google.android.material.snackbar.Snackbar
  */
 class GameFragment : Fragment() {
 
-    private lateinit var binding: GameFragmentBinding
+    private lateinit var binding: GamefragmentBinding
     private val viewModel: ViewModel by viewModels()
 
     override fun onCreateView(
@@ -33,7 +33,7 @@ class GameFragment : Fragment() {
     ): View? {
 
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.GameFragment, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.gamefragment, container, false)
         return binding.root
     }
 
