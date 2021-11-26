@@ -1,18 +1,15 @@
 package com.example.lykkehjulet
 
-import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.lykkehjulet.databinding.FragmentFirstBinding
 import com.example.lykkehjulet.model.ViewModel
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
 //TODO: Skal vise eller holde styr på hvilke bogstaver der er gættet på

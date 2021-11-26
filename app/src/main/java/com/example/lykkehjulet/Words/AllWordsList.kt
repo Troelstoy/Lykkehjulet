@@ -1,5 +1,7 @@
 package com.example.lykkehjulet
 
+//TODO: Categories should be easier to expand
+
 
 val categories: List<String> =
     listOf(
