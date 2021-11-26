@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.lykkehjulet.databinding.FragmentFirstBinding
 import com.example.lykkehjulet.model.ViewModel
+import com.example.lykkehjulet.model.spinWheelTypes
 import com.google.android.material.snackbar.Snackbar
 
 //TODO: Skal vise eller holde styr på hvilke bogstaver der er gættet på
@@ -54,7 +55,7 @@ class GameFragment : Fragment() {
             val word : String = binding.textField.text.toString()
             if(word.isNotEmpty() && word.length == 1){
 
-            val letter : Char = word[0]
+            val letter : Char = word.first()
                 println(viewModel.isUserLetterCorrect(letter))
             }
             update()
@@ -85,14 +86,14 @@ class GameFragment : Fragment() {
          * Button for spinning the wheel
          */
         binding.spinwheel.setOnClickListener {
+            viewModel.spinWheel()
+
         val snack = Snackbar.make(view, "this is a sample", Snackbar.LENGTH_LONG)
             snack.show()
-
             setVisibilityGuess()
-
-            viewModel.increaseScore()
-
             update()
+
+
 
 
         }

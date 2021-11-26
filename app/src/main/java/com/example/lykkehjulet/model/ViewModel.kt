@@ -107,6 +107,20 @@ class ViewModel : ViewModel() {
     }
 
 
+    fun spinWheel() {
+        val rand = (0.. spinWheelTypes.values().size).random()
+
+        val wheelResult = spinWheelTypes.values()[rand]
+
+        println("Du har spunnet $wheelResult")
+
+    }
+
+
+}
+
+enum class spinWheelTypes(){
+    INCREASE_SCORE,INCREASE_LIFES, DECREASE_SCORE, DECREASE_LIFE
 }
 
 
