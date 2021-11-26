@@ -69,6 +69,7 @@ class ViewModel : ViewModel() {
         if (playerWord.uppercase().equals(currentWord.uppercase())) {
             return true
         }
+        else changeUserLife(-1)
         return false
     }
 

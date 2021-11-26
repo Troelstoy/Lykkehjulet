@@ -63,7 +63,7 @@ class LostGameFragment : Fragment() {
                 exitGame()
             }
             .setPositiveButton(getString(R.string.play_again)) { _, _ ->
-               findNavController().navigate(R.id.action_highScores_to_FirstFragment)
+               findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
             }
             .show()
     }

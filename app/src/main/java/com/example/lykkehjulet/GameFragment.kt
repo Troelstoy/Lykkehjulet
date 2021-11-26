@@ -49,6 +49,7 @@ class GameFragment : Fragment() {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
             }
             setVisibilitySpin()
+            update()
         }
 
         binding.buttonSecond.setOnClickListener {
