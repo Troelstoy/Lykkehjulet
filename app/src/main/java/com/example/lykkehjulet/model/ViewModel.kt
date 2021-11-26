@@ -75,9 +75,9 @@ class ViewModel : ViewModel() {
     }
 
     fun isUserLetterCorrect(playerLetter : Char) :Boolean{
-        if(currentWord.contains(playerLetter.lowercaseChar()) || currentWord.contains(playerLetter.uppercaseChar())){
+        if(currentWord.uppercase().contains(playerLetter.uppercase())){
             for (i in currentWord.indices){
-                if (currentWord[i] == playerLetter){
+                if (currentWord[i].uppercase() == playerLetter.uppercase()){
                     guessWord = guessWord.replaceRange(i,i+1,playerLetter.toString())
                 }
             }
@@ -92,7 +92,7 @@ class ViewModel : ViewModel() {
         if(isPlayerBankrupt == TRUE){
             _score.value = 0
         } else {
-            val rand = (0..3).random()
+            val rand = (1..3).random()
             when (rand) {
                 1 -> _score.value = (_score.value)?.plus(500)
                 2 -> _score.value = (_score.value)?.plus(700)
