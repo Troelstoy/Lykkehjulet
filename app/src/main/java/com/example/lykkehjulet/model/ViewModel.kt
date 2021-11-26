@@ -136,7 +136,7 @@ class ViewModel : ViewModel() {
     }
 
     fun wordisGuessed() : Boolean{
-        if(guessWord == currentWord){
+        if(guessWord.uppercase() == currentWord.uppercase()){
             return true
         }
         return false

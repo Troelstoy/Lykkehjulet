@@ -155,6 +155,7 @@ class GameFragment : Fragment() {
         }
         if(viewModel.wordisGuessed()){
             println("Du har vundet")
+            findNavController().navigate(R.id.action_FirstFragment_to_highScores)
         }
 
 
