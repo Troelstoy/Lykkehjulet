@@ -1,13 +1,9 @@
 package com.example.lykkehjulet.model
 
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.style.TtsSpan
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import com.example.lykkehjulet.allWordsList
+import com.example.lykkehjulet.randomWords
 
 //TODO: Får en fejl der siger no adapter attached; skipping layout
 
@@ -35,7 +31,7 @@ class ViewModel : ViewModel() {
     lateinit var guessWord :String
 
     private fun getNextWord() {
-        currentWord = allWordsList.random()
+        currentWord = randomWords.random()
     }
 
     fun initGuessWord(): String {

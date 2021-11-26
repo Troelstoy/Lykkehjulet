@@ -20,10 +20,12 @@ import com.google.android.material.snackbar.Snackbar
 //TODO: Skal vise kategorien af ord
 //TODO: Implmenter spinning wheel
 //TODO: Tilføj logik der checker om input er validt
+//TODO: Kan ikke navigere til higscores skærmen
+//TODO: Vis en warning når der ikke bliver giveet input i gæt
 /**
- * A simple [Fragment] subclass as the default destination in the navigation.
+ * A [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class GameFragment : Fragment() {
 
     private lateinit var binding: FragmentFirstBinding
     private val viewModel: ViewModel by viewModels()
@@ -44,7 +46,7 @@ class FirstFragment : Fragment() {
         binding.buttonFirst.setOnClickListener {
             val word : String = binding.textField.text.toString()
 
-            findNavController().navigate(R.id.action_FirstFragment_to_highScores)
+            //findNavController().navigate(R.id.action_FirstFragment_to_highScores)
 
             if(viewModel.isUserWordCorrect(word)){
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)

@@ -3,8 +3,29 @@ package com.example.lykkehjulet
 
 const val SCORE_INCREASE = 20
 
+
+val Categories: List<String> =
+    listOf(
+        "Steder i København",
+        "Danmarkshistorien",
+
+    )
+
+val StederKBH: List<String> =
+    listOf(
+        "Tivoli",
+        "Rådhuspladsen"
+    )
+
+val Danmarkshistorien: List<String> =
+    listOf(
+        "Vikinger",
+        "Kalmarunionen",
+        "Dybbøl-mølle"
+    )
+
 // List with all the words for the Game
-val allWordsList: List<String> =
+val randomWords: List<String> =
     listOf("animal",
         "auto",
         "anecdote",
