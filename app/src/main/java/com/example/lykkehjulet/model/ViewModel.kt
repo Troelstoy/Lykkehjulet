@@ -31,7 +31,7 @@ class ViewModel : ViewModel() {
 
     private lateinit var currentWord: String
     private lateinit var currentCategoryList : List<String>
-    private lateinit var currentCategoryString : String
+    lateinit var currentCategoryString : String
 
     lateinit var guessWord :String
 

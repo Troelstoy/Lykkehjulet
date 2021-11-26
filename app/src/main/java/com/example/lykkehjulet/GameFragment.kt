@@ -66,6 +66,8 @@ class GameFragment : Fragment() {
 
 
         }
+
+        binding.category.text = "Kategori: " + viewModel.currentCategoryString
         /**
          * Indlæser det rigtige ord
          */
