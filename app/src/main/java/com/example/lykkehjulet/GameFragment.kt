@@ -106,17 +106,6 @@ class GameFragment : Fragment() {
         ("Antal liv: " + viewModel.lives.value.toString()).also { binding.lives.text = it }
         ("Score: " + viewModel.score.value.toString()).also { binding.score.text = it }
 
-
-        /**
-         * Button for spinning the wheel
-         */
-        binding.spinwheel.setOnClickListener {
-
-
-
-
-
-        }
         update()
     }
 
@@ -130,11 +119,9 @@ class GameFragment : Fragment() {
         if (_isSpinningTime){
             binding.buttonFirst.visibility = View.INVISIBLE
             binding.buttonSecond.visibility = View.VISIBLE
-            binding.spinwheel.visibility = View.INVISIBLE
         }else {
             binding.buttonFirst.visibility = View.VISIBLE
             binding.buttonSecond.visibility = View.VISIBLE
-            binding.spinwheel.visibility = View.INVISIBLE
         }
     }
 
