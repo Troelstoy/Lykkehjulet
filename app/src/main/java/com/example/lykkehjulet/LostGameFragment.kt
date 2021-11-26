@@ -15,7 +15,7 @@ import com.example.lykkehjulet.model.ViewModel
  */
 
 //TODO: Skal bruge recyclerview til at vise highscores
-class SecondFragment : Fragment() {
+class LostGameFragment : Fragment() {
 
     private val viewModel: ViewModel by viewModels()
 
