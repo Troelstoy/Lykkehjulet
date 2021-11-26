@@ -1,9 +1,6 @@
 package com.example.lykkehjulet
 
 
-const val SCORE_INCREASE = 20
-
-
 val Categories: List<String> =
     listOf(
         "Steder i København",
