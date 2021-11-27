@@ -77,7 +77,6 @@ class ViewModel : ViewModel() {
         if(currentWord.uppercase().contains(playerLetter.uppercase())){
             showLetter(playerLetter)
 
-            isUserWordCorrect(guessWord)
             return true
         }
         changeUserLife(-1)

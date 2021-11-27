@@ -48,8 +48,11 @@ class GameFragment : Fragment() {
         binding.buttonFirst.setOnClickListener {
             val word : String = binding.textField.text.toString()
 
+            if(word.isNotEmpty()){
+
             if(viewModel.isUserWordCorrect(word)){
                 showFinalScoreDialog()
+                }
             }
             _isGuessingTime = FALSE
             update()
@@ -119,6 +122,8 @@ class GameFragment : Fragment() {
             binding.buttonFirst.visibility = View.VISIBLE
             binding.buttonSecond.visibility = View.VISIBLE
         }
+        println(viewModel.score.value)
+        print(" Er din score")
     }
 
 
@@ -126,7 +131,7 @@ class GameFragment : Fragment() {
     private fun showFinalScoreDialog() {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(getString(R.string.wongame))
-            .setMessage(getString(R.string.you_scored, viewModel.score.value))
+            .setMessage(viewModel.score.value?.let { getString(R.string.you_scored, it) })
             .setCancelable(false)
             .setNegativeButton(getString(R.string.show_highscores)) { _, _ ->
                 findNavController().navigate(R.id.action_FirstFragment_to_highScores)

@@ -12,9 +12,6 @@ import com.example.lykkehjulet.databinding.FragmentSecondBinding
 import com.example.lykkehjulet.model.ViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-//TODO: Skal vise et billede på midten
-//TODO: Skal vise en besked når spilleren trykker spil igen som spørger om man er sikker fordi man lige har tabt
-//TODO: Skal lave sjov med spilleren når spilleren prøver at lukke spillet
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -46,7 +43,7 @@ class LostGameFragment : Fragment() {
 
         binding.buttonSecond.setOnClickListener {
             //findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-            showFinalScoreDialog()
+            replayGameDialog()
         }
 
 
@@ -58,7 +55,7 @@ class LostGameFragment : Fragment() {
     }
 
     @SuppressLint("StringFormatInvalid")
-    private fun showFinalScoreDialog() {
+    private fun replayGameDialog() {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(getString(R.string.lossgame))
             .setMessage(getString(R.string.tease))
