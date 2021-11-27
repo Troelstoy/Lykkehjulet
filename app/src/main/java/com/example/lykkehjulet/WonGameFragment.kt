@@ -9,6 +9,7 @@ import android.view.WindowManager
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.lykkehjulet.databinding.FragmentHighScoresBinding
 //TODO: Vis dummy data på skærmen over highscores som en scrolalble list
 //TODO: Exit game knappen skal vise en besked hvor man er sikker på om man vil afslutte appen
@@ -21,16 +22,7 @@ import com.example.lykkehjulet.databinding.FragmentHighScoresBinding
  */
 class WonGameFragment : Fragment() {
 
-    private val showPart2Runnable = Runnable {
-        // Delayed display of UI elements
-        fullscreenContentControls?.visibility = View.VISIBLE
-    }
     private var visible: Boolean = false
-
-
-    private var dummyButton: Button? = null
-    private var fullscreenContent: View? = null
-    private var fullscreenContentControls: View? = null
 
 
 
@@ -54,35 +46,10 @@ class WonGameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.playAgain.setOnClickListener {findNavController().navigate(R.id.action_highScores_to_FirstFragment)}
+        binding.ExitGame.setOnClickListener { activity?.finish() }
 
         visible = true
 
-    }
-
-    override fun onResume() {
-        super.onResume()
-        activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
-
-    }
-
-    override fun onPause() {
-        super.onPause()
-        activity?.window?.clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
-
-        // Clear the systemUiVisibility flag
-        activity?.window?.decorView?.systemUiVisibility = 0
-
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        dummyButton = null
-        fullscreenContent = null
-        fullscreenContentControls = null
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

@@ -45,6 +45,8 @@ class GameFragment : Fragment() {
         binding.buttonFirst.setOnClickListener {
             val word : String = binding.textField.text.toString()
 
+            findNavController().navigate(R.id.action_FirstFragment_to_highScores)
+
             if(word.isNotEmpty()){
 
             if(viewModel.isUserWordCorrect(word)){
