@@ -19,7 +19,6 @@ import java.lang.Boolean.TRUE
 //TODO: Tilføj logik der checker om input er validt
 //TODO: Vis en warning når der ikke bliver givet rigtigt input i gæt
 //TODO: Genstarter ikke spillet ordentligt
-//TODO: Hvis der bliver gættet forkert med ord skifter den ikke til spinningwheel
 /**
  * A [Fragment] subclass as the default destination in the navigation.
  */
