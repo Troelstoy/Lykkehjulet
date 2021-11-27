@@ -19,6 +19,7 @@ import java.lang.Boolean.TRUE
 //TODO: Tilføj logik der checker om input er validt
 //TODO: Vis en warning når der ikke bliver givet rigtigt input i gæt
 //TODO: Genstarter ikke spillet ordentligt
+//TODO: Hvis der bliver gættet forkert med ord skifter den ikke til spinningwheel
 /**
  * A [Fragment] subclass as the default destination in the navigation.
  */
@@ -50,9 +51,9 @@ class GameFragment : Fragment() {
             if(viewModel.isUserWordCorrect(word)){
                 showFinalScoreDialog()
                 }
-            }
             _isGuessingTime = FALSE
             update()
+            }
         }
 
         binding.buttonSecond.setOnClickListener {
@@ -105,6 +106,7 @@ class GameFragment : Fragment() {
         ("Score: " + viewModel.score.value.toString()).also { binding.score.text = it }
         binding.currentword.text = viewModel.guessWord
         isGameOver()
+        println(_isGuessingTime)
 
 
         if (_isGuessingTime){
