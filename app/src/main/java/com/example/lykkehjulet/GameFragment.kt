@@ -104,7 +104,6 @@ class GameFragment : Fragment() {
         ("Score: " + viewModel.score.value.toString()).also { binding.score.text = it }
         binding.currentword.text = viewModel.guessWord
         isGameOver()
-        println(_isGuessingTime)
 
 
         if (_isGuessingTime){
