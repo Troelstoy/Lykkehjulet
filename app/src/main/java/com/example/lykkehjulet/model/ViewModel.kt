@@ -77,6 +77,9 @@ class ViewModel : ViewModel() {
         if(currentWord.uppercase().contains(playerLetter.uppercase())){
             showLetter(playerLetter)
 
+            if(guessWord.uppercase().equals(currentWord.uppercase())){
+                _isGameWon = TRUE
+            }
             return true
         }
         changeUserLife(-1)

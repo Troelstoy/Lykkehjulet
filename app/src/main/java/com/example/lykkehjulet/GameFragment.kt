@@ -131,7 +131,8 @@ class GameFragment : Fragment() {
     private fun showFinalScoreDialog() {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(getString(R.string.wongame))
-            .setMessage(viewModel.score.value?.let { getString(R.string.you_scored, it) })
+                //TODO: Doesnt display score :(
+            .setMessage(getString(R.string.you_scored, viewModel.score.value.toString()) )
             .setCancelable(false)
             .setNegativeButton(getString(R.string.show_highscores)) { _, _ ->
                 findNavController().navigate(R.id.action_FirstFragment_to_highScores)
