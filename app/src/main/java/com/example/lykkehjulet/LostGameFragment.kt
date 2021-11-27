@@ -61,7 +61,7 @@ class LostGameFragment : Fragment() {
     private fun showFinalScoreDialog() {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(getString(R.string.lossgame))
-            .setMessage(getString(R.string.you_scored, viewModel.score.value))
+            .setMessage(getString(R.string.tease))
             .setCancelable(false)
             .setNegativeButton(getString(R.string.exit)) { _, _ ->
                 exitGame()
