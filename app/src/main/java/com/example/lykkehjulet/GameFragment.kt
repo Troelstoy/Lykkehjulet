@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -26,7 +25,7 @@ import java.lang.Boolean.TRUE
  */
 class GameFragment : Fragment() {
 
-    private var _isSpinningTime = FALSE
+    private var _isGuessingTime = FALSE
 
     private lateinit var binding: GamefragmentBinding
     private val viewModel: ViewModel by viewModels()
@@ -61,18 +60,18 @@ class GameFragment : Fragment() {
 
         binding.buttonSecond.setOnClickListener {
 
-            if(_isSpinningTime){
+            if(_isGuessingTime){
                 binding.buttonSecond.text = "Gæt Bogstav"
 
                 val snack = Snackbar.make(view, viewModel.spinWheel(), Snackbar.LENGTH_LONG)
                 snack.show()
                 update()
-                _isSpinningTime = FALSE
+                _isGuessingTime = FALSE
                 update()
 
 
                 println("DU har lige spunnet hjulet")
-                println(_isSpinningTime)
+                println(_isGuessingTime)
 
 
             }else {
@@ -85,7 +84,7 @@ class GameFragment : Fragment() {
                     println(viewModel.isUserLetterCorrect(letter))
 
                 }
-                    _isSpinningTime = TRUE
+                    _isGuessingTime = TRUE
                 update()
             }
 
@@ -116,7 +115,7 @@ class GameFragment : Fragment() {
         isGameOver()
 
 
-        if (_isSpinningTime){
+        if (_isGuessingTime){
             binding.buttonFirst.visibility = View.INVISIBLE
             binding.buttonSecond.visibility = View.VISIBLE
         }else {
