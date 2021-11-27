@@ -51,7 +51,7 @@ class GameFragment : Fragment() {
             if(viewModel.isUserWordCorrect(word)){
                 showFinalScoreDialog()
                 }
-            _isGuessingTime = FALSE
+            _isGuessingTime = TRUE
             update()
             }
         }
@@ -59,8 +59,6 @@ class GameFragment : Fragment() {
         binding.buttonSecond.setOnClickListener {
 
             if(_isGuessingTime){
-                binding.buttonSecond.text = "Gæt Bogstav"
-
                 val snack = Snackbar.make(view, viewModel.spinWheel(), Snackbar.LENGTH_LONG)
                 snack.show()
                 update()
@@ -68,7 +66,6 @@ class GameFragment : Fragment() {
                 update()
             }
             else {
-                binding.buttonSecond.text = "Spin the wheel"
                 val word: String = binding.textField.text.toString()
 
                 if (word.isNotEmpty() && word.length == 1) {
@@ -112,9 +109,12 @@ class GameFragment : Fragment() {
         if (_isGuessingTime){
             binding.buttonFirst.visibility = View.INVISIBLE
             binding.buttonSecond.visibility = View.VISIBLE
+            binding.buttonSecond.text = "Spin the wheel"
+
         }else {
             binding.buttonFirst.visibility = View.VISIBLE
             binding.buttonSecond.visibility = View.VISIBLE
+            binding.buttonSecond.text = "Gæt Bogstav"
         }
     }
 
