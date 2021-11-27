@@ -136,10 +136,10 @@ class GameFragment : Fragment() {
 
 
 
+    //TODO: Virker ikke ordentligt
     private fun restartGame() {
         viewModel.reinitializeData()
         update()
-        //setErrorTextField(false)
     }
 
     private fun exitGame() {
