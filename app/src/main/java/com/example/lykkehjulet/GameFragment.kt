@@ -16,12 +16,9 @@ import com.google.android.material.snackbar.Snackbar
 import java.lang.Boolean.FALSE
 import java.lang.Boolean.TRUE
 
-//TODO: Skal vise eller holde styr på hvilke bogstaver der er gættet på
-//TODO: Skal have selve lykkehjul elementet med
-//TODO: Implmenter spinning wheel
 //TODO: Tilføj logik der checker om input er validt
-//TODO: Kan ikke navigere til higscores skærmen
 //TODO: Vis en warning når der ikke bliver givet rigtigt input i gæt
+//TODO: Genstarter ikke spillet ordentligt
 /**
  * A [Fragment] subclass as the default destination in the navigation.
  */
@@ -148,6 +145,7 @@ class GameFragment : Fragment() {
 
     private fun restartGame() {
         viewModel.reinitializeData()
+        update()
         //setErrorTextField(false)
     }
 

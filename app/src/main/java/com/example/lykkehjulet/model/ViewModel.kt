@@ -62,6 +62,9 @@ class ViewModel : ViewModel() {
     fun reinitializeData() {
         _score.value = 0
         wordsList.clear()
+        _isGameWon = FALSE
+        setUserLife(5)
+
         getNextWord()
     }
 
@@ -112,6 +115,11 @@ class ViewModel : ViewModel() {
     fun changeUserLife(amount: Int){
         _lives.value =(_lives.value)?.plus(amount)
     }
+
+    fun setUserLife(amount: Int){
+        _lives.value = amount
+    }
+
 
 
     fun spinWheel() : String {
