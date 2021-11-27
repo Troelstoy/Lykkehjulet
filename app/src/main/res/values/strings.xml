@@ -21,4 +21,6 @@
     <string name="play_again">Spil igen</string>
     <string name="input_guess">Indtast dit gæt</string>
     <string name="tease">Er du sikker på du gerne vil prøve igen?</string>
+    <string name="wongame">Du har vundet!</string>
+    <string name="show_highscores">Vis highscores</string>
 </resources>

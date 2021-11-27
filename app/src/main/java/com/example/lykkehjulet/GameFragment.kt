@@ -1,5 +1,6 @@
 package com.example.lykkehjulet
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.lykkehjulet.databinding.GamefragmentBinding
 import com.example.lykkehjulet.model.ViewModel
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import java.lang.Boolean.FALSE
 import java.lang.Boolean.TRUE
@@ -46,16 +48,11 @@ class GameFragment : Fragment() {
         binding.buttonFirst.setOnClickListener {
             val word : String = binding.textField.text.toString()
 
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-
-            //TODO: Change back
-            /*
             if(viewModel.isUserWordCorrect(word)){
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+                showFinalScoreDialog()
             }
-            setVisibilitySpin()
+            _isGuessingTime = FALSE
             update()
-             */
         }
 
         binding.buttonSecond.setOnClickListener {
@@ -124,15 +121,15 @@ class GameFragment : Fragment() {
         }
     }
 
-    //TODO: Implement
-    /*
+
+    @SuppressLint("StringFormatInvalid")
     private fun showFinalScoreDialog() {
         MaterialAlertDialogBuilder(requireContext())
-            .setTitle(getString(R.string.congratulations))
+            .setTitle(getString(R.string.wongame))
             .setMessage(getString(R.string.you_scored, viewModel.score.value))
             .setCancelable(false)
-            .setNegativeButton(getString(R.string.exit)) { _, _ ->
-                exitGame()
+            .setNegativeButton(getString(R.string.show_highscores)) { _, _ ->
+                findNavController().navigate(R.id.action_FirstFragment_to_highScores)
             }
             .setPositiveButton(getString(R.string.play_again)) { _, _ ->
                 restartGame()
@@ -140,7 +137,6 @@ class GameFragment : Fragment() {
             .show()
     }
 
-     */
 
 
 
