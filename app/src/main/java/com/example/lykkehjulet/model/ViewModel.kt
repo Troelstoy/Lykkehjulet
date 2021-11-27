@@ -103,13 +103,6 @@ class ViewModel : ViewModel() {
                 3 -> _score.value = (_score.value)?.plus(1000)
             }
         }
-
-
-        //TODO: Skal slettes
-        println(currentWord)
-        //println(guessWord)
-        //println(currentCategoryString)
-
     }
 
     fun changeUserLife(amount: Int){
@@ -132,8 +125,6 @@ class ViewModel : ViewModel() {
             spinWheelTypes.INCREASE_LIFE -> changeUserLife(1)
             spinWheelTypes.DECREASE_LIFE  -> changeUserLife(-1)
         }
-
-        println(wheelResult.description)
 
         return wheelResult.description
     }

@@ -65,20 +65,15 @@ class GameFragment : Fragment() {
                 update()
                 _isGuessingTime = FALSE
                 update()
-
-
-                println("DU har lige spunnet hjulet")
-                println(_isGuessingTime)
-
-
-            }else {
+            }
+            else {
                 binding.buttonSecond.text = "Spin the wheel"
                 val word: String = binding.textField.text.toString()
 
                 if (word.isNotEmpty() && word.length == 1) {
 
                     val letter: Char = word.first()
-                    println(viewModel.isUserLetterCorrect(letter))
+                    viewModel.isUserLetterCorrect(letter)
 
                 }
                     _isGuessingTime = TRUE
@@ -119,8 +114,6 @@ class GameFragment : Fragment() {
             binding.buttonFirst.visibility = View.VISIBLE
             binding.buttonSecond.visibility = View.VISIBLE
         }
-        println(viewModel.score.value)
-        print(" Er din score")
     }
 
 
@@ -158,7 +151,6 @@ class GameFragment : Fragment() {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
         if(viewModel.wordisGuessed()){
-            println("Du har vundet")
             showFinalScoreDialog()
         }
 
