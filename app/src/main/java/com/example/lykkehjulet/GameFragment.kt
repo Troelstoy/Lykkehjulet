@@ -16,8 +16,8 @@ import com.google.android.material.snackbar.Snackbar
 import java.lang.Boolean.FALSE
 import java.lang.Boolean.TRUE
 
-//TODO: Tilføj logik der checker om input er validt
-//TODO: Vis en warning når der ikke bliver givet rigtigt input i gæt
+//TODO: Kan tilføje logik der checker om input er validt
+//TODO: Kan vise en warning når der ikke bliver givet rigtigt input i gæt f.eks. et ord der er gættet på
 /**
  * A [Fragment] subclass as the default destination in the navigation.
  * Contains all game logic
