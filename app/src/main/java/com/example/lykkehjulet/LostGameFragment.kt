@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.lykkehjulet.databinding.FragmentSecondBinding
+import com.example.lykkehjulet.databinding.FragmentLostGameBinding
 import com.example.lykkehjulet.model.ViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -22,7 +22,7 @@ class LostGameFragment : Fragment() {
 
     private val viewModel: ViewModel by viewModels()
 
-    private var _binding: FragmentSecondBinding? = null
+    private var _binding: FragmentLostGameBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -33,7 +33,7 @@ class LostGameFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = FragmentLostGameBinding.inflate(inflater, container, false)
         return binding.root
 
     }
