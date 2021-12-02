@@ -30,7 +30,7 @@
                 tools:text="Score: 20" />
 
             <Button
-                android:id="@+id/guess_letter"
+                android:id="@+id/guess_letter_Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
@@ -44,7 +44,7 @@
 
 
             <Button
-                android:id="@+id/guess_word"
+                android:id="@+id/guess_word_Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
