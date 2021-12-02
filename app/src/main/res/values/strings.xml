@@ -2,8 +2,8 @@
     <string name="app_name">Lykkehjulet</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="game_fragment_label">Spil spillet</string>
+    <string name="loss_fragment_label">Du har tabt</string>
     <string name="Guess_Word">Gæt Ord</string>
     <string name="Guess_Letter">Gæt Bogstav</string>
     <string name="Replay">Spil igen</string>
@@ -23,4 +23,5 @@
     <string name="tease">Er du sikker på du gerne vil prøve igen?</string>
     <string name="wongame">Du har vundet!</string>
     <string name="show_highscores">Vis highscores</string>
+    <string name="higscores_fragment">Highscores</string>
 </resources>
