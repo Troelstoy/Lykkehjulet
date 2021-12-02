@@ -1,27 +1,29 @@
 <resources>
     <string name="app_name">Lykkehjulet</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
+    <!-- Strings used for fragments -->
     <string name="game_fragment_label">Spil spillet</string>
     <string name="loss_fragment_label">Du har tabt</string>
+    <string name="higscores_fragment">Highscores</string>
+
+
+    <!-- Strings used for buttons -->
     <string name="Guess_Word">Gæt Ord</string>
     <string name="Guess_Letter">Gæt Bogstav</string>
     <string name="Replay">Spil igen</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="Word_to_Guess">Dit ord</string>
+    <string name="spin_hjulet">Spin Lykkehjulet</string>
+    <string name="exit">Luk App</string>
 
+    <!-- Strings used for dialogs -->
     <string name="score">Score: %d</string>
     <string name="helper_text">Indtast dit gæt</string>
-    <string name="spin_hjulet">Spin Lykkehjulet</string>
     <string name="lossgame">Du har lige tabt :(</string>
-    <string name="exit">Luk App</string>
     <string name="you_scored">"Dine point: "</string>
     <string name="play_again">Spil igen</string>
     <string name="input_guess">Indtast dit gæt</string>
     <string name="tease">Er du sikker på du gerne vil prøve igen?</string>
     <string name="wongame">Du har vundet!</string>
     <string name="show_highscores">Vis highscores</string>
-    <string name="higscores_fragment">Highscores</string>
+
 </resources>
