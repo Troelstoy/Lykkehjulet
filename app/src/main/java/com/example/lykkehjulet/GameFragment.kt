@@ -42,7 +42,7 @@ class GameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
+        binding.guessWord.setOnClickListener {
             val word : String = binding.textField.text.toString()
 
             //findNavController().navigate(R.id.action_FirstFragment_to_highScores)
@@ -57,7 +57,7 @@ class GameFragment : Fragment() {
             }
         }
 
-        binding.buttonSecond.setOnClickListener {
+        binding.guessLetter.setOnClickListener {
 
             if(_isGuessingTime){
                 val snack = Snackbar.make(view, viewModel.spinWheel(), Snackbar.LENGTH_LONG)
@@ -107,14 +107,14 @@ class GameFragment : Fragment() {
 
 
         if (_isGuessingTime){
-            binding.buttonFirst.visibility = View.INVISIBLE
-            binding.buttonSecond.visibility = View.VISIBLE
-            binding.buttonSecond.text = "Spin the wheel"
+            binding.guessWord.visibility = View.INVISIBLE
+            binding.guessLetter.visibility = View.VISIBLE
+            binding.guessLetter.text = "Spin the wheel"
 
         }else {
-            binding.buttonFirst.visibility = View.VISIBLE
-            binding.buttonSecond.visibility = View.VISIBLE
-            binding.buttonSecond.text = "Gæt Bogstav"
+            binding.guessWord.visibility = View.VISIBLE
+            binding.guessLetter.visibility = View.VISIBLE
+            binding.guessLetter.text = "Gæt Bogstav"
         }
     }
 
