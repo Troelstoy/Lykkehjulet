@@ -18,7 +18,6 @@ import java.lang.Boolean.TRUE
 
 //TODO: Tilføj logik der checker om input er validt
 //TODO: Vis en warning når der ikke bliver givet rigtigt input i gæt
-//TODO: Genstarter ikke spillet ordentligt
 /**
  * A [Fragment] subclass as the default destination in the navigation.
  * Contains all game logic
@@ -80,6 +79,10 @@ class GameFragment : Fragment() {
         update()
     }
 
+    /**
+     * Updates the screen and all updateables on it
+     */
+
     private fun update(){
         ("Antal liv: " + viewModel.lives.value.toString()).also { binding.lives.text = it }
         ("Score: " + viewModel.score.value.toString()).also { binding.score.text = it }
@@ -101,6 +104,11 @@ class GameFragment : Fragment() {
     }
 
 
+    /**
+     * Displays the wons/finalcore dialog
+     */
+
+
     @SuppressLint("StringFormatInvalid")
     private fun showFinalScoreDialog() {
         MaterialAlertDialogBuilder(requireContext())
@@ -118,9 +126,9 @@ class GameFragment : Fragment() {
     }
 
 
-
-
-    //TODO: Virker ikke ordentligt
+    /**
+     * Used to restart the game
+     */
     private fun restartGame() {
         viewModel.reinitializeData()
         update()
