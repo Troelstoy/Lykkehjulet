@@ -47,16 +47,16 @@ class ViewModel : ViewModel() {
     private fun getNextWord() {
         getCategory()
         currentWord = currentCategoryList.random()
-    }
 
-    fun initGuessWord(): String {
         val builder = StringBuilder()
         for (i in currentWord.indices){
             builder.append("-")
         }
         guessWord = builder.toString()
+    }
 
-        return guessWord
+    fun initGuessWord(){
+
     }
 
     fun reinitializeData() {
@@ -66,6 +66,8 @@ class ViewModel : ViewModel() {
         setUserLife(5)
 
         getNextWord()
+
+        println("")
     }
 
     fun isUserWordCorrect(playerWord: String): Boolean {

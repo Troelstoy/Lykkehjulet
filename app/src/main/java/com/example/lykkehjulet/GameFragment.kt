@@ -46,8 +46,6 @@ class GameFragment : Fragment() {
         binding.guessWordButton.setOnClickListener {
             val word : String = binding.textField.text.toString()
 
-            //findNavController().navigate(R.id.action_FirstFragment_to_highScores)
-
             if(word.isNotEmpty()){
 
             if(viewModel.isUserWordCorrect(word)){
@@ -74,29 +72,11 @@ class GameFragment : Fragment() {
 
                     val letter: Char = word.first()
                     viewModel.isUserLetterCorrect(letter)
-
                 }
                     _isGuessingTime = TRUE
                 update()
             }
-
-
         }
-
-        binding.category.text = "Kategori: " + viewModel.currentCategoryString
-        /**
-         * Indlæser det rigtige ord
-         */
-        viewModel.initGuessWord()
-        binding.currentword.text = viewModel.guessWord
-
-
-        /**
-         * Dummy måde at indsætte et tal på
-         */
-        ("Antal liv: " + viewModel.lives.value.toString()).also { binding.lives.text = it }
-        ("Score: " + viewModel.score.value.toString()).also { binding.score.text = it }
-
         update()
     }
 
@@ -104,6 +84,7 @@ class GameFragment : Fragment() {
         ("Antal liv: " + viewModel.lives.value.toString()).also { binding.lives.text = it }
         ("Score: " + viewModel.score.value.toString()).also { binding.score.text = it }
         binding.currentword.text = viewModel.guessWord
+        binding.category.text = viewModel.currentCategoryString
         isGameOver()
 
 
