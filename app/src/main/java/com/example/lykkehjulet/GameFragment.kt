@@ -21,6 +21,7 @@ import java.lang.Boolean.TRUE
 //TODO: Genstarter ikke spillet ordentligt
 /**
  * A [Fragment] subclass as the default destination in the navigation.
+ * Contains all game logic
  */
 class GameFragment : Fragment() {
 

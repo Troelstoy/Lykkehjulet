@@ -12,8 +12,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.lykkehjulet.databinding.FragmentHighScoresBinding
 //TODO: Vis dummy data på skærmen over highscores som en scrolalble list
-//TODO: Exit game knappen skal vise en besked hvor man er sikker på om man vil afslutte appen
-//TODO: Play again skal redirecte til skærm 1
 //TODO: Skal bruge recyclerview til at vise highscores
 //TODO: SKal rydde lidt op
 /**
