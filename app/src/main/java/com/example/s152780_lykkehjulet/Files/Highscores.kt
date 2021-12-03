@@ -1,4 +1,4 @@
-package com.example.lykkehjulet.Files
+package com.example.s152780_lykkehjulet.Files
 
 val HIGHSCORES : List<Person> =
     listOf(

@@ -1,15 +1,11 @@
-package com.example.lykkehjulet
+package com.example.s152780_lykkehjulet
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
-import com.example.lykkehjulet.databinding.ActivityMainBinding
+import com.example.s152780_lykkehjulet.databinding.ActivityMainBinding
 
 //TODO: Alle fragments skal kobles op på den samme viewmodel
 //TODO: Refactor så alt giver mening

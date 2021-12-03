@@ -1,16 +1,12 @@
-package com.example.lykkehjulet
+package com.example.s152780_lykkehjulet
 
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
-import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.lykkehjulet.databinding.FragmentHighScoresBinding
+import com.example.s152780_lykkehjulet.databinding.FragmentHighScoresBinding
 //TODO: Vis dummy data på skærmen over highscores som en scrolalble list
 //TODO: Skal bruge recyclerview til at vise highscores
 //TODO: SKal rydde lidt op

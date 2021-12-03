@@ -1,4 +1,4 @@
-package com.example.lykkehjulet
+package com.example.s152780_lykkehjulet
 
 import org.junit.Test
 

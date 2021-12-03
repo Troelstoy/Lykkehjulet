@@ -1,9 +1,9 @@
-package com.example.lykkehjulet.model
+package com.example.s152780_lykkehjulet.model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.lykkehjulet.*
+import com.example.s152780_lykkehjulet.*
 import java.lang.Boolean.FALSE
 import java.lang.Boolean.TRUE
 

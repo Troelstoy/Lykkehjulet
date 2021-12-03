@@ -1,4 +1,4 @@
-package com.example.lykkehjulet
+package com.example.s152780_lykkehjulet
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.lykkehjulet.databinding.FragmentGameBinding
-import com.example.lykkehjulet.model.ViewModel
+import com.example.s152780_lykkehjulet.databinding.FragmentGameBinding
+import com.example.s152780_lykkehjulet.model.ViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import java.lang.Boolean.FALSE
@@ -45,6 +45,7 @@ class GameFragment : Fragment() {
         binding.guessWordButton.setOnClickListener {
             val word : String = binding.textField.text.toString()
 
+            showFinalScoreDialog()
             if(word.isNotEmpty()){
 
             if(viewModel.isUserWordCorrect(word)){
@@ -113,8 +114,7 @@ class GameFragment : Fragment() {
     private fun showFinalScoreDialog() {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(getString(R.string.wongame))
-                //TODO: Doesnt display score :(
-            .setMessage(getString(R.string.you_scored, viewModel.score.value.toString()) )
+            .setMessage(getString(R.string.you_scored) + " " + viewModel.score.value.toString())
             .setCancelable(false)
             .setNegativeButton(getString(R.string.show_highscores)) { _, _ ->
                 findNavController().navigate(R.id.action_FirstFragment_to_highScores)

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/Playing"
-        android:name="com.example.lykkehjulet.GameFragment"
+        android:name="com.example.s152780_lykkehjulet.GameFragment"
         android:label="@string/game_fragment_label"
         tools:layout="@layout/fragment_game">
 
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.lykkehjulet.LostGameFragment"
+        android:name="com.example.s152780_lykkehjulet.LostGameFragment"
         android:label="@string/loss_fragment_label"
         tools:layout="@layout/fragment_lost_game">
 
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/highScores"
-        android:name="com.example.lykkehjulet.WonGameFragment"
+        android:name="com.example.s152780_lykkehjulet.WonGameFragment"
         android:label="@string/higscores_fragment"
         tools:layout="@layout/fragment_high_scores" >
         <action

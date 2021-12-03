@@ -1,4 +1,4 @@
-package com.example.lykkehjulet
+package com.example.s152780_lykkehjulet
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.lykkehjulet.databinding.FragmentLostGameBinding
-import com.example.lykkehjulet.model.ViewModel
+import com.example.s152780_lykkehjulet.databinding.FragmentLostGameBinding
+import com.example.s152780_lykkehjulet.model.ViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
