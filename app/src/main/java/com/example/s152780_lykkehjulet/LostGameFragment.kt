@@ -41,9 +41,19 @@ class LostGameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /**
+         *  The play again button
+         */
         binding.buttonSecond.setOnClickListener {
             //findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
             replayGameDialog()
+        }
+
+        /**
+         *  The exit game button
+         */
+        binding.exit.setOnClickListener {
+            exitGame()
         }
 
 
@@ -53,6 +63,10 @@ class LostGameFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    /**
+     * Shows the dialog when player tries to play game again
+     */
 
     @SuppressLint("StringFormatInvalid")
     private fun replayGameDialog() {

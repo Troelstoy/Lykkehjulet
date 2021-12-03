@@ -6,10 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.s152780_lykkehjulet.Files.MentionsAdapter
 import com.example.s152780_lykkehjulet.databinding.FragmentHighScoresBinding
 //TODO: Vis dummy data på skærmen over highscores som en scrolalble list
 //TODO: Skal bruge recyclerview til at vise highscores

@@ -42,6 +42,10 @@ class GameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /**
+         * Logic for the guess word button
+         */
+
         binding.guessWordButton.setOnClickListener {
             val word : String = binding.textField.text.toString()
 
@@ -55,6 +59,9 @@ class GameFragment : Fragment() {
             }
         }
 
+        /**
+         * Logic for the guess letter button
+         */
         binding.guessLetterButton.setOnClickListener {
 
             if(_isGuessingTime){

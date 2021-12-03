@@ -12,15 +12,18 @@ import java.lang.Boolean.TRUE
 class ViewModel : ViewModel() {
     private var _isGameWon = false
 
+
+    //Players lives
     private val _lives = MutableLiveData(5)
     val lives: LiveData<Int>
         get() = _lives
 
+    //Players score
     private val _score = MutableLiveData(0)
     val score: LiveData<Int>
         get() = _score
 
-
+    //List of words
     private var wordsList: MutableList<String> = mutableListOf()
 
 
@@ -49,6 +52,10 @@ class ViewModel : ViewModel() {
         currentCategoryString = category
     }
 
+    /**
+     * Get next word from a list and show ---- on the screen
+     */
+
     private fun getNextWord() {
         getCategory()
         currentWord = currentCategoryList.random()
@@ -60,10 +67,9 @@ class ViewModel : ViewModel() {
         guessWord = builder.toString()
     }
 
-    fun initGuessWord(){
-
-    }
-
+    /**
+     * Restart game
+     */
     fun reinitializeData() {
         _score.value = 0
         wordsList.clear()
@@ -75,6 +81,9 @@ class ViewModel : ViewModel() {
         println("")
     }
 
+    /**
+     * Checks wehter the user word is correct
+     */
     fun isUserWordCorrect(playerWord: String): Boolean {
         if (playerWord.uppercase().equals(currentWord.uppercase())) {
             return true
@@ -83,6 +92,9 @@ class ViewModel : ViewModel() {
         return false
     }
 
+    /**
+     * Checks wether the user letter is correct
+     */
     fun isUserLetterCorrect(playerLetter : Char) :Boolean{
         if(currentWord.uppercase().contains(playerLetter.uppercase())){
             showLetter(playerLetter)
@@ -97,7 +109,9 @@ class ViewModel : ViewModel() {
     }
 
 
-
+    /**
+     * Changes score by a random value
+     */
     fun changeScore(isPlayerBankrupt : Boolean) {
 
         if(isPlayerBankrupt == TRUE){
@@ -112,6 +126,7 @@ class ViewModel : ViewModel() {
         }
     }
 
+
     fun changeUserLife(amount: Int){
         _lives.value =(_lives.value)?.plus(amount)
     }
@@ -121,7 +136,9 @@ class ViewModel : ViewModel() {
     }
 
 
-
+    /**
+     * This function "spins" the wheel
+     */
     fun spinWheel() : String {
         val rand = (0.. spinWheelTypes.values().size-1).random()
         val wheelResult = spinWheelTypes.values()[rand]
@@ -136,6 +153,9 @@ class ViewModel : ViewModel() {
         return wheelResult.description
     }
 
+    /**
+     * If user has guessed correct letter, replaces the right - in the word
+     */
     private fun showLetter(playerLetter: Char) {
         for (i in currentWord.indices){
             if (currentWord[i].uppercase() == playerLetter.uppercase()){
@@ -143,6 +163,7 @@ class ViewModel : ViewModel() {
             }
         }
     }
+
 
     fun wordisGuessed() : Boolean{
         if(guessWord.uppercase() == currentWord.uppercase()){
@@ -153,6 +174,9 @@ class ViewModel : ViewModel() {
 
 }
 
+/**
+ * Types of categories on the wheel
+ */
 enum class spinWheelTypes(val description : String){
     INCREASE_SCORE("Du får flere point!"),
     INCREASE_LIFE ("Du har fået et ekstra liv"),
