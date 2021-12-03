@@ -45,6 +45,8 @@ class GameFragment : Fragment() {
         binding.guessWordButton.setOnClickListener {
             val word : String = binding.textField.text.toString()
 
+            showFinalScoreDialog()
+
             if(word.isNotEmpty()){
 
             if(viewModel.isUserWordCorrect(word)){

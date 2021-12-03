@@ -13,10 +13,12 @@ import com.example.s152780_lykkehjulet.R
 
 //TODO: Cant make this work
 
-class MentionsAdapter(
+class MentionsAdapter(context: Context
 
-    private var dataset: List<String> = Honorable_Mentions
     ) : RecyclerView.Adapter<MentionsAdapter.ItemViewHolder>() {
+
+        private var dataset: List<String> = Honorable_Mentions
+        val words = context.resources.getStringArray(R.array.words).toList()
 
         class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
             val textView: TextView = view.findViewById(R.id.item_title)
@@ -31,7 +33,7 @@ class MentionsAdapter(
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        holder.textView.text = dataset[position]
+        holder.textView.text = words[position]
     }
 
     override fun getItemCount() = dataset.size

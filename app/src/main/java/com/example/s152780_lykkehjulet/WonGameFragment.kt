@@ -54,8 +54,8 @@ class WonGameFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerView = binding.recyclerView
-
-        recyclerView.adapter = MentionsAdapter()
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = MentionsAdapter(requireContext())
 
         binding.playAgain.setOnClickListener {
             findNavController().navigate(R.id.action_highScores_to_FirstFragment)
