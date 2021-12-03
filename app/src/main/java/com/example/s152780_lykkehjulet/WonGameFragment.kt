@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
+import com.example.s152780_lykkehjulet.Files.Honorable_Mentions
 import com.example.s152780_lykkehjulet.databinding.FragmentHighScoresBinding
 //TODO: Vis dummy data på skærmen over highscores som en scrolalble list
 //TODO: Skal bruge recyclerview til at vise highscores
@@ -19,12 +21,14 @@ class WonGameFragment : Fragment() {
     private var visible: Boolean = false
 
 
-
     private var _binding: FragmentHighScoresBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    private val person = Honorable_Mentions
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,14 +37,19 @@ class WonGameFragment : Fragment() {
     ): View? {
 
         _binding = FragmentHighScoresBinding.inflate(inflater, container, false)
+
         return binding.root
+
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.playAgain.setOnClickListener {findNavController().navigate(R.id.action_highScores_to_FirstFragment)}
+        binding.playAgain.setOnClickListener {
+            findNavController().navigate(R.id.action_highScores_to_FirstFragment)
+            println(person)
+        }
         binding.ExitGame.setOnClickListener { activity?.finish() }
 
         visible = true

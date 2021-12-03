@@ -34,6 +34,11 @@ class ViewModel : ViewModel() {
 
     lateinit var guessWord :String
 
+
+    /**
+     * Switch statement for different categories
+     */
+
     private fun getCategory(){
         val category = categories.random()
         when (category){
