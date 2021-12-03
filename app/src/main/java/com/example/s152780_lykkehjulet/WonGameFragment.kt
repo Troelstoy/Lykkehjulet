@@ -49,13 +49,23 @@ class WonGameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /**
+         * Creates and fill in the recyclerview
+         */
         recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = MentionsAdapter(requireContext())
 
+        /**
+         * The play again button
+         */
         binding.playAgain.setOnClickListener {
             findNavController().navigate(R.id.action_highScores_to_FirstFragment)
         }
+
+        /**
+         * The exit game button
+         */
         binding.ExitGame.setOnClickListener { activity?.finish() }
 
         visible = true

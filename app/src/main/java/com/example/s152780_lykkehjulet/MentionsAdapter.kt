@@ -11,6 +11,9 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 
 //TODO: Cant make this work
+/**
+ * Adapter class for converting the xml file arrays to something displayable in the recyclerview
+ */
 
 class MentionsAdapter(context: Context
 
