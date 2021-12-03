@@ -17,7 +17,6 @@ class MentionsAdapter(context: Context
 
     ) : RecyclerView.Adapter<MentionsAdapter.ItemViewHolder>() {
 
-        private var dataset: List<String> = Honorable_Mentions
         val words = context.resources.getStringArray(R.array.words).toList()
 
         class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
@@ -36,7 +35,7 @@ class MentionsAdapter(context: Context
         holder.textView.text = words[position]
     }
 
-    override fun getItemCount() = dataset.size
+    override fun getItemCount() = words.size
 
 
     companion object Accessibility : View.AccessibilityDelegate() {

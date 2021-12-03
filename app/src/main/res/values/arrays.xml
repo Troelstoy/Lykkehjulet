@@ -16,30 +16,30 @@
 -->
 <resources>
     <string-array name="words">
-        <item>aargh</item>
-        <item>about</item>
-        <item>acidic</item>
-        <item>acne</item>
-        <item>acrid</item>
-        <item>acute</item>
-        <item>alphabet</item>
-        <item>anchor</item>
-        <item>anecdote</item>
-        <item>animal</item>
-        <item>automobile</item>
-        <item>awesome</item>
-        <item>back</item>
-        <item>balloon</item>
-        <item>basket</item>
-        <item>bench</item>
-        <item>best</item>
-        <item>birthday</item>
-        <item>books</item>
-        <item>brief</item>
-        <item>business</item>
-        <item>buy</item>
-        <item>camera</item>
-        <item>catapult</item>
+        <item>Bill Gates</item>
+        <item>Elon Musk</item>
+        <item>Linus Torvald</item>
+        <item>Donald Tusk</item>
+        <item>Mette Frederiksen</item>
+        <item>Anders Fogh Rasmussen</item>
+        <item>Alphabeat</item>
+        <item>Anders Hemmingsen</item>
+        <item>Cristiano Ronaldo </item>
+        <item>Klumben </item>
+        <item>Remee </item>
+        <item>Min mor</item>
+        <item>Min far</item>
+        <item>Min hund</item>
+        <item>Oprah </item>
+        <item>Kim Kardashian</item>
+        <item>Pornhub</item>
+        <item>Tiger Woods</item>
+        <item>Princess Diana</item>
+        <item>Disturbed</item>
+        <item>Brad Pitt</item>
+        <item>Angelina Jolie</item>
+        <item>Duden nede på tanken</item>
+        <item>HERFRA RANDOM WORDS</item>
         <item>center</item>
         <item>children</item>
         <item>city</item>
